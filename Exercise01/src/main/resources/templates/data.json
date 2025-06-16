@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Fury 325",
+    "model": "Giga Coaster",
+    "height": 99,
+    "length": 2012,
+    "speed": 153,
+    "year": 2015
+  },
+  {
+    "name": "Kingda Ka",
+    "model": "Strata Coaster",
+    "height": 139,
+    "length": 950,
+    "speed": 206,
+    "year": 2005
+  },
+  {
+    "name": "Steel Dragon 2000",
+    "model": "Hyper Coaster",
+    "height": 97,
+    "length": 2479,
+    "speed": 153,
+    "year": 2000
+  },
+  {
+    "name": "Red Force",
+    "model": "Accelerator",
+    "height": 112,
+    "length": 880,
+    "speed": 180,
+    "year": 2017
+  }
+]
