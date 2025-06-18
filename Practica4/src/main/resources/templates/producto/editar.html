@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Examen T2</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="..." crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Edit a new Product:</h1>
+    <form th:action="@{/producto/edit}" method="post" th:object="${producto}">
+        <div class="mb-3">
+            <label for="ID" class="form-label">Email ID</label>
+            <input type="text" class="form-control" id="ID" aria-describedby="emailHelp" disabled
+            th:field="*{id}"
+            >
+        </div>
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Email nombre</label>
+            <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp"
+                   th:field="*{nombre}"
+            >
+        </div>
+        <div class="mb-3">
+            <label for="stock_maximo" class="form-label">Email stock_maximo</label>
+            <input type="text" class="form-control" id="stock_maximo" aria-describedby="emailHelp"
+                   th:field="*{stockMax}"
+            >
+        </div>
+        <div class="mb-3">
+            <label for="stockActual" class="form-label">Email stockActual</label>
+            <input type="text" class="form-control" id="stockActual" aria-describedby="emailHelp"
+                   th:field="*{stockActual}"
+            >
+        </div>
+        <div class="mb-3">
+            <label for="categoria" class="form-label">categoria:</label>
+            <select id="categoria" class="form-select" th:field="*{categoria}">
+                <option th:each="x : ${cbo}" th:text="${x.descripcion}" th:value="${x.id}"></option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>
