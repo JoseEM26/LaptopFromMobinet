@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="..." crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+   <div class="container">
+       <h1>Hola create</h1>
+       <form th:action="@{/producto/save}" th:object="${producto}" method="post">
+           <div class="mb-3">
+               <label for="id" class="form-label">ID:</label>
+               <input type="text" id="id" class="form-control" placeholder="ID" readonly th:field="*{id}" >
+           </div>
+           <div class="mb-3">
+               <label for="nombre" class="form-label">nombre:</label>
+               <input type="text" id="nombre" class="form-control" placeholder="nombre:" th:field="*{nombre}">
+           </div>
+           <div class="mb-3">
+               <label for="stock_maximo" class="form-label">stock_maximo:</label>
+               <input type="number" id="stock_maximo" class="form-control" placeholder="stock_maximo" th:field="*{stockMax}" >
+           </div>
+           <div class="mb-3">
+               <label for="stock_actual" class="form-label">stock_actual:</label>
+               <input type="number" id="stock_actual" class="form-control" placeholder="stock_actual" th:field="*{stockActual}">
+           </div>
+
+           <div class="mb-3">
+               <label for="categoria" class="form-label">categoria:</label>
+               <select id="categoria" class="form-select" th:field="*{categoria}">
+                   <option value="-1">--selected--</option>
+                   <option th:each="x : ${cboCategoria}"
+                           th:value="${x.id}"
+                           th:text="${x.descripcion}"
+                   ></option>
+               </select>
+           </div>
+
+           <button type="submit" class="btn btn-primary">Submit</button>
+       </form>
+
+   </div>
+
+
+</body>
+</html>
