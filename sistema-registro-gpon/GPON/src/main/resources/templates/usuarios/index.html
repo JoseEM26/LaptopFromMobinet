@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layoutBase('Usuarios', 'Listado', ~{::contenido})}">
+<th:block th:fragment="contenido">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+                    <h5 class="fw-bold text-primary mb-0">
+                        <i class="fa-solid fa-users me-2"></i>
+                        Lista de usuarios
+                    </h5>
+                    <a th:href="@{/usuarios/nuevo}" class="btn btn-primary btn-sm">
+                        <i class="fas fa-plus me-1"></i>
+                        Nuevo usuario
+                    </a>
+                </div>
+
+                <div class="card-body px-3 pt-0 pb-3">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped align-middle">
+                            <thead class="bg-light">
+                                <tr>
+                                    <th class="text-center">Código</th>
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Apellido</th>
+                                    <th class="text-center">Correo</th>
+                                    <th class="text-center">Contraseña</th>
+                                    <th class="text-center">Estado</th>
+                                    <th class="text-center">Rol</th>
+                                    <th class="text-center">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="usuario : ${lstUsuarios}">
+                                    <td th:text="${usuario.idUsuario}" class="text-center"></td>
+                                    <td th:text="${usuario.nombre}" class="text-center text-capitalize"></td>
+                                    <td th:text="${usuario.apellido}" class="text-center text-capitalize"></td>
+                                    <td th:text="${usuario.correo}" class="text-center"></td>
+
+                                    <!-- Contraseña oculta -->
+                                    <td class="text-center">
+                                        <span class="text-muted">••••••</span>
+                                    </td>
+
+                                    <!-- Estado como badge -->
+                                    <td class="text-center">
+                                        <span th:classappend="${usuario.estado == 'activo'} ? 'badge bg-success' : 'badge bg-secondary'"
+                                              th:text="${usuario.estado}">
+                                        </span>
+                                    </td>
+
+                                    <!-- Rol -->
+                                    <td th:text="${usuario.rol.descripcion}" class="text-center text-capitalize"></td>
+
+                                    <!-- Acciones -->
+                                    <td class="text-center">
+                                        <a th:href="@{'/usuarios/edicion/' + ${usuario.idUsuario}}"
+                                           class="btn btn-sm btn-outline-primary me-2" title="Editar">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+
+                                        <a href="javascript:void(0);"
+                                           class="btn btn-sm btn-outline-danger"
+                                           th:onclick="'confirmarEliminacion(' + ${usuario.idUsuario} + ')'"
+                                           title="Eliminar">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <!-- Mensaje si no hay usuarios -->
+                                <tr th:if="${#lists.isEmpty(lstUsuarios)}">
+                                    <td colspan="8" class="text-center text-muted py-4">
+                                        No hay usuarios registrados.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- SweetAlert para confirmación -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function confirmarEliminacion(id) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "Esta acción inhabilitará al usuario.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Confirmar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '/usuarios/eliminar/' + id;
+                }
+            });
+        }
+    </script>
+
+    <!-- Mostrar alertas -->
+    <div th:utext="${alert}"></div>
+
+</th:block>
+</html>
