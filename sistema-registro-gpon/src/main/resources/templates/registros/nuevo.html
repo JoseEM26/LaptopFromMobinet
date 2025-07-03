@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="fragments/layout :: layoutBase('Registros', 'Nuevo', ~{::contenido}, ~{::scripts})">
+
+<th:block th:fragment="contenido">
+
+    <div class="card shadow-sm p-4">
+        <h5 class="mb-4">
+            <i class="fa-solid fa-plus me-1"></i>
+            Nuevo registro RUC10
+        </h5>
+
+        <form method="post" th:object="${ruc10DTO}" th:action="@{/registros/registrar}" novalidate>
+            <!-- ==================================================== -->
+            <!-- PASO 1: DATOS DE LOS TRABAJADORES                    -->
+            <!-- ==================================================== -->
+            <div class="form-step active">
+                <div class="row">
+                    <h6 class="mb-3">
+                        <i class="fas fa-users-cog me-1"></i>
+                        Datos de los trabajadores
+                    </h6>
+
+                    <!-- Consultor -->
+                    <div class="col-md-6 mb-3">
+                        <label for="idUsuarioConsultor" class="form-label">
+                            Consultor
+                            <span class="text-danger">*</span>
+                        </label>
+                        <select th:field="*{idUsuarioConsultor}" class="form-select" required>
+                            <option value="">Seleccione un consultor</option>
+                            <option th:each="c : ${consultores}"
+                                    th:value="${c.idUsuario}"
+                                    th:text="${c.nombre + ' ' + c.apellido}">
+                            </option>
+                        </select>
+                        <div class="invalid-feedback">Debe seleccionar un consultor</div>
+                    </div>
+
+                    <!-- Supervisor -->
+                    <div class="col-md-6 mb-3">
+                        <label for="idUsuarioSupervisor" class="form-label">
+                            Supervisor
+                            <span class="text-danger">*</span>
+                        </label>
+                        <select th:field="*{idUsuarioSupervisor}" class="form-select" required>
+                            <option value="">Seleccione un supervisor</option>
+                            <option th:each="x : ${supervisores}"
+                                    th:value="${s.idUsuario}"
+                                    th:text="${s.nombre + ' ' + s.apellido}">
+                            </option>
+                        </select>
+                        <div class="invalid-feedback">Debe seleccionar un supervisor</div>
+                    </div>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex justify-content-end">
+                    <a th:href="@{/registros}" class="btn btn-secondary me-1 mb-0">
+                        <i class="fas fa-times me-1"></i>
+                        Cancelar
+                    </a>
+                    <button type="button" class="btn btn-primary next-step mb-0">
+                        Siguiente
+                        <i class="fas fa-arrow-right ms-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ==================================================== -->
+            <!-- PASO 2: DATOS DEL CLIENTE                            -->
+            <!-- ==================================================== -->
+            <div class="form-step">
+                <h6 class="mb-3">
+                    <i class="fa-solid fa-building-user me-1"></i>
+                    Datos del cliente
+                </h6>
+
+                <div class="row">
+                    <!-- DNI -->
+                    <div class="col-md-4 mb-3">
+                        <label for="dniCliente" class="form-label">
+                            DNI
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" inputmode="numeric" th:field="*{dniCliente}"
+                               class="form-control" required pattern="\d{8}" minlength="8" maxlength="8"
+                               placeholder="Ingrese un DNI válido (8 dígitos)" />
+                        <div class="invalid-feedback">El DNI debe tener 8 dígitos numéricos</div>
+                    </div>
+
+                    <!-- Nombre(s) -->
+                    <div class="col-md-4 mb-3">
+                        <label for="nombreCliente" class="form-label">
+                            Nombre(s) <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" th:field="*{nombreCliente}" class="form-control"
+                               placeholder="Ingrese un(os) nombre(s)" required minlength="2" />
+                        <div class="invalid-feedback">El nombre es obligatorio</div>
+                    </div>
+
+                    <!-- Apellido(s) -->
+                    <div class="col-md-4 mb-3">
+                        <label for="apellidoCliente" class="form-label">
+                            Apellido(s) <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" th:field="*{apellidoCliente}" class="form-control"
+                               placeholder="Ingrese un(os) apellido(s)" required minlength="2" />
+                        <div class="invalid-feedback">El apellido es obligatorio</div>
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div class="col-md-6 mb-3">
+                        <label for="telefonoCliente" class="form-label">
+                            Teléfono <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" th:field="*{telefonoCliente}" class="form-control"
+                               placeholder="Ingrese un teléfono" required pattern="\d{9}"
+                               minlength="9" maxlength="9" inputmode="numeric" />
+                        <div class="invalid-feedback">El teléfono debe tener 9 dígitos</div>
+                    </div>
+
+                    <!-- RUC -->
+                    <div class="col-md-6 mb-3">
+                        <label for="rucCliente" class="form-label">
+                            RUC <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" inputmode="numeric" th:field="*{rucCliente}" class="form-control"
+                               placeholder="Ingrese un RUC válido" required pattern="\d{11}"
+                               minlength="11" maxlength="11" />
+                        <div class="invalid-feedback">El RUC debe tener 11 dígitos numéricos</div>
+                    </div>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-secondary prev-step me-1 mb-0">
+                        <i class="fas fa-arrow-left me-1"></i>
+                        Anterior
+                    </button>
+                    <button type="button" class="btn btn-primary next-step mb-0">
+                        Siguiente
+                        <i class="fas fa-arrow-right ms-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ==================================================== -->
+            <!-- PASO 3: REPRESENTANTE LEGAL                          -->
+            <!-- ==================================================== -->
+            <div class="form-step">
+                <h6 class="mb-3">
+                    <i class="fas fa-user-tie me-1"></i>
+                    Representante legal
+                </h6>
+
+                <div class="row">
+                    <!-- Nombre contacto -->
+                    <div class="col-md-6 mb-3">
+                        <label for="nombreContacto" class="form-label">
+                            Nombre contacto
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" th:field="*{nombreContacto}" class="form-control"
+                               placeholder="Ingrese un nombre" required minlength="2" />
+                        <div class="invalid-feedback">El nombre del contacto principal es obligatorio</div>
+                    </div>
+
+                    <!-- DNI -->
+                    <div class="col-md-6 mb-3">
+                        <label for="dniContacto" class="form-label">
+                            DNI <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" inputmode="numeric" th:field="*{dniContacto}"
+                               class="form-control" required pattern="\d{8}" minlength="8" maxlength="8"
+                               placeholder="Ingrese un DNI válido (8 dígitos)" />
+                        <div class="invalid-feedback">El DNI del contacto debe tener 8 dígitos numéricos</div>
+                    </div>
+
+                    <!-- Correo electrónico -->
+                    <div class="col-md-6 mb-3">
+                        <label for="correoContacto" class="form-label">
+                            Correo electrónico
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="email" th:field="*{correoContacto}" class="form-control"
+                               placeholder="correo@ejemplo.com" required
+                               pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" />
+                        <div class="invalid-feedback">El correo del contacto es obligatorio</div>
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div class="col-md-6 mb-3">
+                        <label for="telefonoContacto" class="form-label">
+                            Teléfono
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" th:field="*{telefonoContacto}" class="form-control"
+                               placeholder="Ingrese un teléfono" required pattern="\d{9}"
+                               minlength="9" maxlength="9" inputmode="numeric" />
+                        <div class="invalid-feedback">El teléfono del contacto debe tener 9 dígitos</div>
+                    </div>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-secondary prev-step me-1 mb-0">
+                        <i class="fas fa-arrow-left me-1"></i>
+                        Anterior
+                    </button>
+                    <button type="button" class="btn btn-primary next-step mb-0">
+                        Siguiente
+                        <i class="fas fa-arrow-right ms-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ==================================================== -->
+            <!-- PASO 4: CONTACTO AUTORIZADO                          -->
+            <!-- ==================================================== -->
+            <div class="form-step">
+                <h6 class="mb-3">
+                    <i class="fas fa-user-check me-1"></i>
+                    Contacto autorizado
+                </h6>
+
+                <div class="row">
+                    <!-- Nombre completo -->
+                    <div class="col-md-6 mb-3">
+                        <label for="nombreContactoSec" class="form-label">
+                            Nombre completo
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" th:field="*{nombreContactoSec}" class="form-control"
+                               placeholder="Ingrese un nombre" required minlength="2" />
+                        <div class="invalid-feedback">El nombre es obligatorio</div>
+                    </div>
+
+                    <!-- DNI -->
+                    <div class="col-md-6 mb-3">
+                        <label for="dniContactoSec" class="form-label">
+                            DNI <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" inputmode="numeric" th:field="*{dniContactoSec}"
+                               class="form-control" required pattern="\d{8}" minlength="8" maxlength="8"
+                               placeholder="Ingrese un DNI válido (8 dígitos)" />
+                        <div class="invalid-feedback">El DNI del contacto debe tener 8 dígitos numéricos</div>
+                    </div>
+
+                    <!-- Correo electrónico -->
+                    <div class="col-md-6 mb-3">
+                        <label for="correoContactoSec" class="form-label">
+                            Correo electrónico
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="email" th:field="*{correoContactoSec}" class="form-control"
+                               placeholder="correo@ejemplo.com" required
+                               pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" />
+                        <div class="invalid-feedback">El correo del contacto secundario es obligatorio</div>
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div class="col-md-6 mb-3">
+                        <label for="telefonoContactoSec" class="form-label">
+                            Teléfono <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" th:field="*{telefonoContactoSec}" class="form-control"
+                               placeholder="Ingrese un teléfono" required pattern="\d{9}"
+                               minlength="9" maxlength="9" inputmode="numeric" />
+                        <div class="invalid-feedback">El teléfono del contacto secundario debe tener 9 dígitos</div>
+                    </div>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-secondary prev-step me-1 mb-0">
+                        <i class="fas fa-arrow-left me-1"></i>
+                        Anterior
+                    </button>
+                    <button type="button" class="btn btn-primary next-step mb-0">
+                        Siguiente
+                        <i class="fas fa-arrow-right ms-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ==================================================== -->
+            <!-- PASO 5: SERVICIO CONTRATADO                          -->
+            <!-- ==================================================== -->
+            <div class="form-step">
+                <h6 class="mb-3">
+                    <i class="fas fa-file-contract me-1"></i>
+                    Servicio contratado
+                </h6>
+
+                <div class="row">
+                    <!-- Plan -->
+                    <div class="col-md-6 mb-3">
+                        <label for="idPlan" class="form-label">
+                            Plan
+                            <span class="text-danger">*</span>
+                        </label>
+                        <select class="form-select" th:field="*{idPlan}" required>
+                            <option value="">Seleccione un plan</option>
+                            <option th:each="p : ${planes}"
+                                    th:value="${p.idPlan}"
+                                    th:text="${p.descripcion}">
+                            </option>
+                        </select>
+                        <div class="invalid-feedback">Debe seleccionar un plan</div>
+                    </div>
+
+                    <!-- Promoción -->
+                    <div class="col-md-6 mb-3">
+                        <label for="idPromocion" class="form-label">
+                            Promoción
+                        </label>
+                        <select th:field="*{idPromocion}" class="form-select">
+                            <option value="-1">Ninguna</option>
+                            <option th:each="p : ${promociones}"
+                                    th:value="${p.idPromocion}"
+                                    th:text="${p.descripcion}">
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-secondary prev-step me-1 mb-0">
+                        <i class="fas fa-arrow-left me-1"></i>
+                        Anterior
+                    </button>
+                    <button type="button" class="btn btn-primary next-step mb-0">
+                        Siguiente
+                        <i class="fas fa-arrow-right ms-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ==================================================== -->
+            <!-- PASO 6: CRONOGRAMA                                   -->
+            <!-- ==================================================== -->
+            <div class="form-step">
+                <h6 class="mb-3">
+                    <i class="fas fa-calendar-alt me-1"></i>
+                    Cronograma
+                </h6>
+
+                <div class="row">
+                    <!-- Departamento -->
+                    <div class="col-md-4 mb-3">
+                        <label for="departamento" class="form-label">
+                            Departamento
+                            <span class="text-danger">*</span>
+                        </label>
+                        <select class="form-select" th:field="*{departamento}" required>
+                            <option value="">Seleccione un departamento</option>
+                            <option value="Lima">Lima</option>
+                        </select>
+                        <div class="invalid-feedback">Debe seleccionar un departamento</div>
+                    </div>
+
+                    <!-- Provincia -->
+                    <div class="col-md-4 mb-3">
+                        <label for="provincia" class="form-label">
+                            Provincia
+                            <span class="text-danger">*</span>
+                        </label>
+                        <select class="form-select" th:field="*{provincia}" required>
+                            <option value="">Seleccione una provincia</option>
+                            <option value="Lima">Lima</option>
+                        </select>
+                        <div class="invalid-feedback">Debe seleccionar una provincia</div>
+                    </div>
+
+                    <!-- Distrito -->
+                    <div class="col-md-4 mb-3">
+                        <label for="nombreDistrito" class="form-label">
+                            Distrito
+                            <span class="text-danger">*</span>
+                        </label>
+                        <select class="form-select" th:field="*{nombreDistrito}" required>
+                            <option value="">Seleccione un distrito</option>
+                            <option th:each="d : ${distritos}"
+                                    th:value="${d.nombreDistrito}"
+                                    th:text="${d.nombreDistrito}">
+                            </option>
+                        </select>
+                        <div class="invalid-feedback">Debe seleccionar un distrito</div>
+                    </div>
+
+                    <!-- Sector -->
+                    <div class="col-md-4 mb-3">
+                        <label for="nombreSector" class="form-label">
+                            Sector
+                            <span class="text-danger">*</span>
+                        </label>
+                        <select class="form-select" th:field="*{nombreSector}" required>
+                            <option value="">Seleccione un sector</option>
+                            <option th:each="s : ${sectores}"
+                                    th:value="${s.idSector}"
+                                    th:text="${s.nombreSector}">
+                            </option>
+                        </select>
+                        <div class="invalid-feedback">Debe seleccionar un sector</div>
+                    </div>
+
+                    <!-- Referencia -->
+                    <div class="col-md-4 mb-3">
+                        <label for="referencia" class="form-label">
+                            Referencia
+                        </label>
+                        <input type="text" class="form-control" th:field="*{referencia}"
+                               placeholder="Ej. A espaldas del parque" />
+                    </div>
+
+                    <!-- N° -->
+                    <div class="col-md-4 mb-3">
+                        <label for="numero" class="form-label">
+                            N°
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" class="form-control" th:field="*{numero}"
+                               placeholder="Ej. 123" required pattern="\d+" />
+                        <div class="invalid-feedback">El número es obligatorio</div>
+                    </div>
+
+                    <!-- Interior o departamento -->
+                    <div class="col-md-3 mb-3">
+                        <label for="interior" class="form-label">
+                            Interior o departamento <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" class="form-control" th:field="*{interior}"
+                               placeholder="Ej. B-4" required minlength="1" maxlength="15" />
+                        <div class="invalid-feedback">El interior o departamento es obligatorio</div>
+                    </div>
+
+                    <!-- Rango Horario -->
+                    <div class="col-md-3 mb-3">
+                        <label for="rangoInstalacion" class="form-label">
+                            Rango horario
+                            <span class="text-danger">*</span>
+                        </label>
+                        <select class="form-select" th:field="*{rangoInstalacion}" required>
+                            <option value="">Seleccione un rango</option>
+                            <option value="manana">09:00 a 13:00 hr</option>
+                            <option value="tarde">13:00 a 18:00 hr</option>
+                        </select>
+                        <div class="invalid-feedback">Debe seleccionar un rango</div>
+                    </div>
+
+                    <!-- Observaciones -->
+                    <div class="col-md-6 mb-3">
+                        <label for="observacion" class="form-label">
+                            Observaciones
+                        </label>
+                        <input type="text" class="form-control" th:field="*{observacion}"
+                               placeholder="Ingrese observaciones (opcional)" />
+                    </div>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-secondary prev-step me-1 mb-0">
+                        <i class="fas fa-arrow-left me-1"></i>
+                        Anterior
+                    </button>
+
+                    <button type="submit" class="btn btn-primary mb-0">
+                        <i class="fas fa-plus me-1"></i>
+                        Registrar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</th:block>
+
+<th:block th:fragment="scripts">
+    <script>
+        const steps = document.querySelectorAll(".form-step");
+        let currentStep = 0;
+
+        document.querySelectorAll(".next-step").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                if (validarPaso(currentStep)) {
+                    steps[currentStep].classList.remove("active");
+                    currentStep++;
+                    steps[currentStep].classList.add("active");
+                }
+            });
+        });
+
+        document.querySelectorAll(".prev-step").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                steps[currentStep].classList.remove("active");
+                currentStep--;
+                steps[currentStep].classList.add("active");
+            });
+        });
+
+        function validarPaso(paso) {
+            const inputs = steps[paso].querySelectorAll("input, select, textarea");
+            let pasoValido = true;
+
+            inputs.forEach(input => {
+                if (input.type === 'select-one' && input.value.trim() === '') {
+                    input.classList.add("is-invalid");
+                    pasoValido = false;
+                } else if (!input.checkValidity()) {
+                    input.classList.add("is-invalid");
+                    pasoValido = false;
+                } else {
+                    input.classList.remove("is-invalid");
+                }
+            });
+
+            return pasoValido;
+        }
+
+        document.querySelectorAll('input, select, textarea').forEach(el => {
+            el.addEventListener('input', () => el.classList.remove('is-invalid'));
+            el.addEventListener('change', () => el.classList.remove('is-invalid'));
+        });
+
+        document.querySelector("form").addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                const esUltimoPaso = steps[currentStep].querySelector('button[type="submit"]') !== null;
+                if (!esUltimoPaso) {
+                    event.preventDefault();
+                    const botonSiguiente = steps[currentStep].querySelector('.next-step');
+                    if (botonSiguiente) {
+                        botonSiguiente.click();
+                    }
+                }
+            }
+        });
+
+        // Validar todo antes del submit final
+        document.querySelector("form").addEventListener("submit", function (event) {
+            let pasoConErrores = -1;
+
+            steps.forEach((step, index) => {
+                const inputs = step.querySelectorAll("input, select, textarea");
+                let valido = true;
+
+                inputs.forEach(input => {
+                    if (input.type === 'select-one' && input.value.trim() === '') {
+                        input.classList.add("is-invalid");
+                        valido = false;
+                    } else if (!input.checkValidity()) {
+                        input.classList.add("is-invalid");
+                        valido = false;
+                    }
+                });
+
+                if (!valido && pasoConErrores === -1) {
+                    pasoConErrores = index;
+                }
+            });
+
+            if (pasoConErrores !== -1) {
+                event.preventDefault();
+                steps[currentStep].classList.remove("active");
+                currentStep = pasoConErrores;
+                steps[currentStep].classList.add("active");
+
+                const primerInvalido = steps[currentStep].querySelector(".is-invalid");
+                if (primerInvalido) {
+                    primerInvalido.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
+            }
+        });
+    </script>
+</th:block>
+</html>

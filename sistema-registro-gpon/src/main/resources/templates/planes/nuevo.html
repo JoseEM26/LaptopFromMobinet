@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="fragments/layout :: layoutBase('Planes', 'Nuevo', ~{::contenido}, ~{})">
+
+<th:block th:fragment="contenido">
+	<div class="card shadow-sm p-4">
+	       <h5 class="mb-4">
+	           <i class="fa-solid fa-plus me-1"></i>
+	           Nueva plan
+	       </h5>
+
+	       <form th:action="@{/planes/registrar}" method="post" th:object="${plan}">
+	           <div class="row">
+	               <div class="col-md-12 mb-3">
+	                   <label for="descripcion" class="form-label">
+	                       Descripción
+	                       <span class="text-danger">*</span>
+	                   </label>
+	                   <input type="text" th:field="*{descripcion}" class="form-control" placeholder="300 Mbps. Fibra Optica" required />
+	               </div>
+	           </div>
+
+	           <input type="hidden" th:field="*{activo}" value="activo" />
+
+	           <!-- Botones -->
+	           <div class="d-flex justify-content-end">
+	               <a th:href="@{/promociones}" class="btn btn-secondary me-1 mb-0">
+	                   <i class="fas fa-times me-1"></i>
+	                   Cancelar
+	               </a>
+
+	               <button type="submit" class="btn btn-primary mb-0">
+	                   <i class="fas fa-plus me-1"></i>
+					   Registrar
+	               </button>
+	           </div>
+	       </form>
+	   </div>
+</th:block>
+</html>

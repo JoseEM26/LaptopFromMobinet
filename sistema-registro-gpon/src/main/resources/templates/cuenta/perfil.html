@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragments/layout :: layoutBase('Cuenta', 'Perfil', ~{::contenido}, ~{})">
+<th:block th:fragment="contenido">
+	<div class="row">
+		<div class="col-md-8">
+			<form th:action="@{/cuenta/actualizar}" th:object="${usuario}" method="post">
+				<div class="card">
+					<div class="card-header pb-0">
+						<div class="d-flex align-items-center">
+							<p class="mb-0">Editar perfil</p>
+							<button type="submit" class="btn btn-primary btn-sm ms-auto">Guardar Cambios</button>
+						</div>
+					</div>
+					<div class="card-body">
+						<p class="text-sm">Información del usuario</p>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="form-control-label">Nombre</label>
+									<input class="form-control" type="text" th:field="*{nombre}" readonly disabled>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="form-control-label">Apellido</label>
+									<input class="form-control" type="text" th:field="*{apellido}" readonly disabled>
+								</div>
+							</div>
+							<div class="col-md-12 mt-3">
+								<div class="form-group">
+									<label class="form-control-label">Correo electrónico</label>
+									<input class="form-control" type="email" th:field="*{correo}" required>
+								</div>
+							</div>
+
+							<div class="col-md-12 mt-3">
+								<div class="form-group">
+									<label class="form-control-label">Contraseña actual <span
+											class="text-danger">*</span></label>
+									<div class="input-group">
+										<input class="form-control" type="password" name="contrasenaActual"
+											   id="contrasenaActual" required>
+										<span class="input-group-text p-0">
+											<button type="button" class="btn btn-outline-secondary h-100 px-3 mb-0 border-0 d-flex align-items-center justify-content-center"
+													onclick="toggleVisibility('contrasenaActual')">
+												<i class="fa fa-eye"></i>
+											</button>
+										</span>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="col-md-12 mt-3">
+								<div class="form-group">
+									<label class="form-control-label">Nueva contraseña (opcional)</label>
+
+									<div class="input-group">
+										<input class="form-control" type="password" name="nuevaContrasena"
+											   id="nuevaContrasena">
+										<span class="input-group-text p-0">
+											<button type="button" class="btn btn-outline-secondary h-100 px-3 mb-0 border-0 d-flex align-items-center justify-content-center"
+													onclick="toggleVisibility('nuevaContrasena')">
+												<i class="fa fa-eye"></i>
+											</button>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<!-- Perfil lateral opcional -->
+		<div class="col-md-4">
+			<div class="card card-profile">
+				<img src="/assets/img/bg-profile.jpg" alt="Image placeholder" class="card-img-top">
+				<div class="row justify-content-center">
+					<div class="col-4 col-lg-4 order-lg-2">
+						<div class="mt-n4 mt-lg-n6 mb-4 mb-lg-0">
+							<a href="javascript:;">
+								<img src="/assets/img/team-2.jpg"
+									 class="rounded-circle img-fluid border border-2 border-white">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="card-body pt-0">
+					<div class="text-center mt-4">
+						<h5 th:text="${usuario.nombre} + ' ' + ${usuario.apellido}"></h5>
+						<div class="h6 font-weight-300" th:text="${usuario.correo}"></div>
+						<div class="h6 mt-4">
+							<i class="ni business_briefcase-24 mr-2"></i>
+							<span th:text="${usuario.rol.descripcion}">Rol</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		function toggleVisibility(inputId) {
+			const input = document.getElementById(inputId);
+			input.type = input.type === "password" ? "text" : "password";
+		}
+	</script>
+</th:block>
+</html>

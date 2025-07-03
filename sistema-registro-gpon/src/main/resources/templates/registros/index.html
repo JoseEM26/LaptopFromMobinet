@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="fragments/layout :: layoutBase('Registros RUC1O', 'Listado', ~{::contenido}, ~{::scripts})">
+
+<th:block th:fragment="contenido">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+                    <h5>
+                        <i class="fa-solid fa-id-card me-1"></i>
+                        Lista de registros
+                    </h5>
+
+                    <a th:href="@{/registros/nuevo}" class="btn btn-primary mb-0">
+                        <i class="fas fa-plus me-1"></i>
+                        Nuevo
+                    </a>
+                </div>
+
+                <div class="row g-2 px-4 pt-3 d-flex justify-content-between align-items-center">
+                    <form method="get" th:action="@{/registros/filtrado}" th:object="${filtro}" class="d-flex flex-wrap gap-2 col">
+                        <!-- Select de Estados -->
+                        <div class="col-auto">
+                            <div class="input-group input-group-sm">
+								<span class="input-group-text border-secondary">
+									<i class="fa-solid fa-filter text-secondary"></i>
+								</span>
+                                <select class="form-select border-secondary" th:field="*{idEstado}" onchange="this.form.submit()">
+                                    <option value="0" selected >Todos los estados</option>
+                                    <option th:each="item : ${lstEstados}" th:value="${item.idEstado}" th:text="${item.descripcion}"></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Botón Limpiar -->
+                        <div class="col-auto">
+                            <a th:href="@{/registros}" class="btn btn-outline-secondary btn-sm mb-0">
+                                <i class="fa-solid fa-broom me-1"></i>
+                                Limpiar
+                            </a>
+                        </div>
+                    </form>
+
+                    <div class="col-auto d-flex gap-2">
+                        <a id="btn-exportar-pdf" class="btn btn-danger btn-sm mb-0" th:href="@{/registros/report/{id}(id=${filtro.idEstado})}">
+                            <i class="fa-solid fa-file-pdf me-1"></i>
+                            PDF
+                        </a>
+                        <button id="btn-exportar-excel" class="btn btn-success btn-sm mb-0">
+                            <i class="fa-solid fa-file-excel me-1"></i>
+                            Excel
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-body px-0 pt-0 pb-2">
+                    <table id="tabla-registros" class="table align-items-center mb-0">
+                        <thead>
+                            <tr>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Código</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Cliente</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Consultor</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Supervisor</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Estado</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Cod. solicitud</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Cod. instalación</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Cod. carrito</th>
+                                <th class="text-secondary opacity-7"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="x : ${lstRegistros}">
+                                <td class="ps-4">
+                                    <span class="badge border text-dark" th:text="${x.idRegistro}"></span>
+                                </td>
+                                <td class="ps-0">
+                                    <p class="text-sm text-dark mb-0" th:text="${x.cliente.nombre + ' ' + x.cliente.apellido}"></p>
+                                </td>
+                                <td class="ps-0">
+                                    <p class="text-sm text-dark mb-0" th:text="${x.usuarioConsultor.nombre + ' ' + x.usuarioConsultor.apellido}"></p>
+                                </td>
+                                <td class="ps-0">
+                                    <p class="text-sm text-dark mb-0" th:text="${x.usuarioSupervisor.nombre + ' ' + x.usuarioSupervisor.apellido}"></p>
+                                </td>
+                                <td class="ps-0">
+                                    <span class="badge border text-dark text-capitalize" th:text="${x.estado.descripcion}"></span>
+                                </td>
+                                <td class="ps-0">
+                                    <span class="badge border text-dark text-capitalize" th:text="${x.idSolicitud}"></span>
+                                </td>
+                                <td class="ps-0">
+                                    <span class="badge border text-dark text-capitalize" th:text="${x.idInstalacion}"></span>
+                                </td>
+                                <td class="ps-0">
+                                    <span class="badge border text-dark text-capitalize" th:text="${x.idCarrito}"></span>
+                                </td>
+                                <td class="ps-0">
+                                    <div class="dropdown dropstart">
+                                        <button class="btn btn-sm mb-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </button>
+                                        <ul class="dropdown-menu shadow-sm border-0 rounded-3 p-2">
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center gap-2 text-primary rounded" th:href="@{/registros/edicion/{id}(id=${x.idRegistro})}">
+                                                    <i class="fa-solid fa-pen"></i> Editar
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center gap-2 text-secondary rounded" th:href="@{/registros/detalle/{id}(id=${x.idRegistro})}">
+                                                    <i class="fa-solid fa-circle-info"></i> Detalle
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr th:if="${#lists.isEmpty(lstRegistros)}">
+                                <td colspan="8" class="text-center text-secondary">
+                                    No hay registros disponibles.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+<!--                <div class="modal fade" id="modalCronograma" tabindex="-1" aria-labelledby="modalCronogramaLabel" aria-hidden="true">-->
+<!--                    <div class="modal-dialog modal-dialog-centered">-->
+<!--                        <div class="modal-content">-->
+<!--                            <div class="modal-header bg-info text-white">-->
+<!--                                <h5 class="modal-title" id="modalCronogramaLabel">-->
+<!--                                    <i class="fa-solid fa-calendar-days me-2"></i> Detalle de Cronograma-->
+<!--                                </h5>-->
+<!--                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>-->
+<!--                            </div>-->
+<!--                            <div class="modal-body">-->
+<!--                                <p><strong>Cliente:</strong> Juan Pérez</p>-->
+<!--                                <p><strong>Fecha:</strong> 10 de julio de 2025</p>-->
+<!--                                <p><strong>Hora:</strong> 3:00 PM</p>-->
+<!--                                <p><strong>Dirección:</strong> Av. Los Álamos 123 - Lima</p>-->
+<!--                                <p><strong>Consultor asignado:</strong> Ana Torres</p>-->
+<!--                            </div>-->
+<!--                            <div class="modal-footer">-->
+<!--                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <div th:if="${toast}" th:utext="${toast}"></div>
+</th:block>
+
+<th:block th:fragment="scripts">
+    <!-- Initialize DataTable with custom styles -->
+    <th:block th:replace="fragments/datatable-script :: datatableScript('tabla-registros')"/>
+
+    <script>
+        function confirmarCambioEstado(checkbox) {
+            const form = checkbox.form;
+            const activo = checkbox.checked; // true si se activó, false si se desactivó
+
+            if (!activo) {
+                // Si se va a desactivar, pedir confirmación
+                Swal.fire({
+                    title: '¿Estás seguro?',
+                    text: 'Estás por desactivar este registro.',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sí, desactivar',
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    } else {
+                        checkbox.checked = true; // volver a activarlo si cancela
+                    }
+                });
+            } else {
+                // Si se activa, no se necesita confirmación
+                form.submit();
+            }
+        }
+    </script>
+</th:block>
+</html>

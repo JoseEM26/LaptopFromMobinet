@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="fragments/layout :: layoutBase('Usuarios', 'Nuevo', ~{::contenido}, ~{})">
+
+<th:block th:fragment="contenido">
+
+    <div class="card shadow-sm p-4">
+        <h5 class="mb-4">
+            <i class="fa-solid fa-plus me-1"></i>
+            Nuevo usuario
+        </h5>
+
+        <form th:action="@{/usuarios/registrar}" method="post" th:object="${usuario}">
+            <div class="row">
+                <!-- Nombre(s) -->
+                <div class="col-md-6 mb-3">
+                    <label for="nombre" class="form-label">
+                        Nombre(s)
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" th:field="*{nombre}" class="form-control" placeholder="Ingrese un(os) nombre(s)" required />
+                </div>
+
+                <!-- Apellido(s) -->
+                <div class="col-md-6 mb-3">
+                    <label for="apellido" class="form-label">
+                        Apellido(s)
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" th:field="*{apellido}" class="form-control" placeholder="Ingrese un(os) apellido(s)" required />
+                </div>
+
+                <!-- Correo -->
+                <div class="col-md-6 mb-3">
+                    <label for="correo" class="form-label">
+                        Correo electrónico
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" th:field="*{correo}" class="form-control" placeholder="correo@ejemplo.com" required />
+                </div>
+
+                <!-- Contraseña -->
+                <div class="col-md-6 mb-3">
+                    <label for="contrasena" class="form-label">
+                        Contraseña
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="password" th:field="*{contrasena}" class="form-control" placeholder="Ingrese una contraseña" required />
+                </div>
+
+                <!-- Rol -->
+                <div class="col-md-6 mb-3">
+                    <label for="rol" class="form-label">
+                        Rol
+                        <span class="text-danger">*</span>
+                    </label>
+                    <select th:field="*{rol}" class="form-select" required>
+                        <option value="-1">Seleccione un rol</option>
+                        <option th:each="rolItem : ${roles}"
+                                th:value="${rolItem.idRol}"
+                                th:text="${rolItem.descripcion}">
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Estado (oculto) -->
+            <input type="hidden" th:field="*{estado}" value="activo" />
+
+            <!-- Botones -->
+            <div class="d-flex justify-content-end">
+                <a th:href="@{/usuarios}" class="btn btn-secondary me-1 mb-0">
+                    <i class="fas fa-times me-1"></i>
+                    Cancelar
+                </a>
+
+                <button type="submit" class="btn btn-primary mb-0">
+                    <i class="fas fa-plus me-1"></i>
+                    Registrar
+                </button>
+            </div>
+        </form>
+    </div>
+</th:block>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragments/layout :: layoutBase('Promociones', 'Editar', ~{::contenido}, ~{})">
+<th:block th:fragment="contenido">
+
+    <div class="card shadow-sm p-4">
+        <h5 class="mb-4">
+            <i class="fa-solid fa-pen me-1"></i>
+            Editar promoción
+        </h5>
+
+        <form th:action="@{/promociones/guardar}" method="post" th:object="${promocion}">
+            <div class="row">
+                <!-- Código (oculto y deshabilitado) -->
+                <input type="hidden" th:field="*{idPromocion}" />
+                <div class="col-md-6 mb-3">
+                    <label for="idPromocionVisible" class="form-label">
+                        Código
+                    </label>
+                    <input type="number" th:value="*{idPromocion}" class="form-control" id="idPromocionVisible" disabled />
+                </div>
+
+                <!-- Descripción -->
+                <div class="col-md-6 mb-3">
+                    <label for="descripcion" class="form-label">
+                        Descripción
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" th:field="*{descripcion}" class="form-control" placeholder="Ej. 2x1 en instalación fibra" required />
+                </div>
+            </div>
+
+			<input type="hidden" th:field="*{estado}" />
+
+            <!-- Botones -->
+            <div class="d-flex justify-content-end">
+                <a th:href="@{/promociones}" class="btn btn-secondary me-1 mb-0">
+                    <i class="fas fa-times me-1"></i>
+                    Cancelar
+                </a>
+
+                <button type="submit" class="btn btn-primary mb-0">
+                    <i class="fas fa-save me-1"></i>
+                    Actualizar
+                </button>
+            </div>
+        </form>
+    </div>
+</th:block>
+</html>

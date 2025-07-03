@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="fragments/layout :: layoutBase('Clientes', 'Listado', ~{::contenido}, ~{::scripts})">
+
+<th:block th:fragment="contenido">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+                    <h5>
+                        <i class="fa-solid fa-user-tie me-1"></i>
+                        Lista de clientes
+                    </h5>
+
+                    <a th:href="@{/clientes/nuevo}" class="btn btn-primary mb-0">
+                        <i class="fas fa-plus me-1"></i>
+                        Nuevo
+                    </a>
+                </div>
+
+                <div class="row g-2 px-4 pt-3 d-flex justify-content-between align-items-center">
+                    <form method="get" th:action="@{/clientes/filtrado}" th:object="${filtro}" class="d-flex flex-wrap gap-2 col">
+                        <!-- Select de Roles -->
+                        <div class="col-auto">
+                            <div class="input-group input-group-sm">
+								<span class="input-group-text border-secondary">
+									<i id="estado-icon" class="fa-solid fa-filter text-secondary"></i>
+								</span>
+                                <select id="estado-select" class="form-select border-secondary" th:field="*{activo}" onchange="actualizarIconoEstado(); this.form.submit()">
+                                    <option value="">Todos</option>
+                                    <option value="true">Activo</option>
+                                    <option value="false">Inactivo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Botón Limpiar -->
+                        <div class="col-auto">
+                            <a th:href="@{/clientes}" class="btn btn-outline-secondary btn-sm mb-0">
+                                <i class="fa-solid fa-broom me-1"></i>
+                                Limpiar
+                            </a>
+                        </div>
+                    </form>
+
+                    <div class="col-auto d-flex gap-2">
+                        <button id="btn-exportar-pdf" class="btn btn-danger btn-sm mb-0">
+                            <i class="fa-solid fa-file-pdf me-1"></i>
+                            PDF
+                        </button>
+                        <button id="btn-exportar-excel" class="btn btn-success btn-sm mb-0">
+                            <i class="fa-solid fa-file-excel me-1"></i>
+                            Excel
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-body px-0 pt-0 pb-2">
+                    <table id="tabla-clientes" class="table align-items-center mb-0">
+                        <thead>
+                            <tr>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">DNI</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">RUC</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Nombre</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Apellido</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Teléfono</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Activo</th>
+                                <th class="text-secondary opacity-7"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="cliente : ${lstClientes}">
+                                <td class="ps-4">
+                                    <span class="badge badge-sm border text-dark" th:text="${cliente.dniCliente}"></span>
+                                </td>
+                                <td class="ps-0">
+                                    <span class="badge badge-sm border text-dark" th:text="${cliente.ruc}"></span>
+                                </td>
+                                <td class="ps-0">
+                                    <p class="text-sm text-dark mb-0" th:text="${cliente.nombre}"></p>
+                                </td>
+                                <td class="ps-0">
+                                    <p class="text-sm text-dark mb-0" th:text="${cliente.apellido}"></p>
+                                </td>
+                                <td class="ps-0">
+                                    <p class="text-sm text-dark mb-0" th:text="${cliente.telefono}"></p>
+                                </td>
+                                <td class="ps-0">
+                                    <form method="post"
+                                          th:action="@{/clientes/cambiar-estado/{id}(id=${cliente.dniCliente})}">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="form-switch">
+                                                <input class="form-check-input" type="checkbox"
+                                                       th:checked="${cliente.activo}" onchange="this.form.submit()">
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <span class="d-none export-estado" th:text="${cliente.activo} ? 'Sí' : 'No'"></span>
+                                </td>
+                                <td class="ps-0">
+                                    <a th:href="@{'/clientes/edicion/' + ${cliente.dniCliente}}" class="btn btn-sm text-primary me-1 mb-0">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr th:if="${#lists.isEmpty(lstClientes)}">
+                                <td colspan="7" class="text-center text-secondary">
+                                    No hay clientes registrados.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+
+<th:block th:fragment="scripts">
+    <!-- Initialize DataTable with custom styles -->
+    <th:block th:replace="fragments/datatable-script :: datatableScript('tabla-clientes')"/>
+
+    <!-- Dynamic icon based on status filter selection -->
+    <script>
+        function actualizarIconoEstado() {
+            const select = document.getElementById('estado-select');
+            const icon = document.getElementById('estado-icon');
+            const value = select.value;
+
+            icon.className = 'fa-solid';
+
+            if (value === 'true') {
+                icon.classList.add('fa-toggle-on', 'text-primary');
+            } else if (value === 'false') {
+                icon.classList.add('fa-toggle-off', 'text-danger');
+            } else {
+                icon.classList.add('fa-filter', 'text-secondary');
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", actualizarIconoEstado);
+    </script>
+
+    <!-- jsPDF + autoTable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+    <!-- ExcelJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
+
+    <script>
+        // ===================== Export to PDF =====================
+        document.getElementById('btn-exportar-pdf').addEventListener('click', () => {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const table = $('#tabla-clientes').DataTable();
+            const headers = [];
+            const data = [];
+
+            $('#tabla-clientes thead th').each(function (index) {
+                if (index < $('#tabla-clientes thead th').length - 1) {
+                    headers.push($(this).text().trim());
+                }
+            });
+
+            table.rows({ search: 'applied' }).every(function () {
+                const row = this.data();
+                const rowData = [];
+
+                for (let i = 0; i < row.length - 1; i++) {
+                    const cell = $(row[i]);
+
+                    const statusSpan = cell.find('.export-estado');
+                    if (statusSpan.length > 0) {
+                        rowData.push(statusSpan.text().trim());
+                    } else {
+                        rowData.push(cell.text().trim());
+                    }
+                }
+
+                data.push(rowData);
+            });
+
+            const pageWidth = doc.internal.pageSize.getWidth();
+            const margin = 15;
+
+            const now = new Date();
+            const dateText = now.toLocaleDateString('es-PE', {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric'
+            }).replace('.', '');
+
+            const timeText = now.toLocaleTimeString('es-PE', {
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true
+            }).toLowerCase();
+
+            doc.setFontSize(11);
+            doc.setTextColor('#000000');
+            doc.text(dateText, margin, 15);
+            doc.text(timeText, pageWidth - margin, 15, { align: 'right' });
+
+            doc.setFontSize(14);
+            doc.setFont(undefined, 'bold');
+            doc.text('Lista de clientes', pageWidth / 2, 15, { align: 'center' });
+
+            doc.autoTable({
+                head: [headers],
+                body: data,
+                startY: 22,
+                headStyles: {
+                    fillColor: '#344767',
+                    textColor: '#ffffff',
+                    valign: 'middle',
+                    fontStyle: 'bold',
+                    lineColor: '#2c3e50',
+                    lineWidth: 0.2
+                },
+                styles: {
+                    fontSize: 9,
+                    cellPadding: 3,
+                    textColor: '#000000',
+                    lineColor: '#cccccc',
+                    lineWidth: 0.1
+                },
+                theme: 'grid',
+                didParseCell: function (data) {
+                    const colIndex = headers.indexOf('Activo');
+                    if (data.section === 'body' && data.column.index === colIndex) {
+                        const normalize = (str) => str?.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+                        const value = normalize(data.cell.raw);
+
+                        if (value === 'si') {
+                            data.cell.styles.textColor = '#4CAF50';
+                        } else if (value === 'no') {
+                            data.cell.styles.textColor = '#F44335';
+                        }
+                    }
+                }
+            });
+
+            doc.save('clientes.pdf');
+        });
+        // =================== End Export to PDF ===================
+
+        // ===================== Export to Excel =====================
+        document.getElementById('btn-exportar-excel').addEventListener('click', async () => {
+            const table = $('#tabla-clientes').DataTable();
+            const headers = [];
+            const data = [];
+
+            $('#tabla-clientes thead th').each(function (i) {
+                if (i < $('#tabla-clientes thead th').length - 1) {
+                    headers.push($(this).text().trim());
+                }
+            });
+
+            table.rows({ search: 'applied' }).every(function () {
+                const row = this.data();
+                const rowData = [];
+                for (let i = 0; i < row.length - 1; i++) {
+                    const cell = $(row[i]);
+                    const statusSpan = cell.find('.export-estado');
+                    if (statusSpan.length > 0) {
+                        rowData.push(statusSpan.text().trim());
+                    } else {
+                        rowData.push(cell.text().trim());
+                    }
+                }
+                data.push(rowData);
+            });
+
+            const workbook = new ExcelJS.Workbook();
+            const sheet = workbook.addWorksheet('Clientes');
+
+            const now = new Date();
+            const dateText = now.toLocaleDateString('es-PE', {
+                day: 'numeric', month: 'short', year: 'numeric'
+            }).replace('.', '');
+            const timeText = now.toLocaleTimeString('es-PE', {
+                hour: 'numeric', minute: '2-digit', hour12: true
+            }).toLowerCase();
+
+            sheet.mergeCells('C1', 'D1');
+            sheet.getCell('A1').value = `${dateText}`;
+            sheet.getCell('C1').value = 'Lista de clientes';
+            sheet.getCell('F1').value = `${timeText}`;
+
+            sheet.getCell('A1').font = { bold: true };
+            sheet.getCell('C1').font = { bold: true, size: 14 };
+            sheet.getCell('C1').alignment = { horizontal: 'center' };
+            sheet.getCell('F1').font = { bold: true };
+            sheet.getCell('F1').alignment = { horizontal: 'right' };
+
+            sheet.addRow([]);
+            const headerRow = sheet.addRow(headers);
+
+            headerRow.eachCell((cell) => {
+                cell.fill = {
+                    type: 'pattern',
+                    pattern: 'solid',
+                    fgColor: { argb: 'FF344767' }
+                };
+                cell.font = { color: { argb: 'FFFFFFFF' }, bold: true };
+                cell.alignment = { vertical: 'middle', horizontal: 'center' };
+                cell.border = {
+                    top: { style: 'thin', color: { argb: 'FF2C3E50' } },
+                    bottom: { style: 'thin', color: { argb: 'FF2C3E50' } },
+                    left: { style: 'thin', color: { argb: 'FF2C3E50' } },
+                    right: { style: 'thin', color: { argb: 'FF2C3E50' } }
+                };
+            });
+
+            data.forEach(rowData => {
+                const row = sheet.addRow(rowData);
+                row.eachCell((cell, colNumber) => {
+                    const isStatusColumn = headers[colNumber - 1] === 'Activo';
+                    let fontColor = 'FF000000';
+
+                    if (isStatusColumn) {
+                        const value = cell.value?.toString()
+                            .normalize("NFD")
+                            .replace(/[\u0300-\u036f]/g, "")
+                            .toLowerCase();
+
+                        if (value === 'si') fontColor = 'FF4CAF50';
+                        else if (value === 'no') fontColor = 'FFF44335';
+                    }
+
+                    cell.font = { color: { argb: fontColor } };
+                    cell.alignment = { vertical: 'middle', horizontal: 'left' };
+                    cell.border = {
+                        top: { style: 'thin', color: { argb: 'FFCCCCCC' } },
+                        bottom: { style: 'thin', color: { argb: 'FFCCCCCC' } },
+                        left: { style: 'thin', color: { argb: 'FFCCCCCC' } },
+                        right: { style: 'thin', color: { argb: 'FFCCCCCC' } }
+                    };
+                });
+            });
+
+            sheet.columns.forEach(column => {
+                let maxLength = 10;
+                column.eachCell({ includeEmpty: true }, cell => {
+                    const len = cell.value ? cell.value.toString().length : 0;
+                    if (len > maxLength) maxLength = len;
+                });
+                column.width = maxLength + 2;
+            });
+
+            const buffer = await workbook.xlsx.writeBuffer();
+            const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'clientes.xlsx';
+            link.click();
+        });
+        // ================== End Export to Excel ==================
+    </script>
+</th:block>
+</html>

@@ -1,0 +1,32 @@
+.sidebar-icon-box {
+  width: 20px;
+  min-width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+.btn-sm {
+  --bs-btn-padding-x: 0.9rem !important;
+  --bs-btn-padding-y: 0.4rem !important;
+}
+
+.invalid-feedback {
+  font-size: 0.75rem;
+}
+
+.dropdown-menu {
+    display: none !important;
+}
+
+.dropdown-menu.show {
+    display: block !important;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="fragments/layout :: layoutBase('Clientes', 'Nuevo', ~{::contenido}, ~{::scripts})">
+
+<th:block th:fragment="contenido">
+
+    <div class="card shadow-sm p-4">
+        <h5 class="mb-4">
+            <i class="fa-solid fa-plus me-1"></i>
+            Nuevo cliente
+        </h5>
+
+        <form th:action="@{/clientes/registrar}" method="post" th:object="${cliente}" novalidate>
+            <div class="row">
+                <!-- DNI -->
+                <div class="col-md-6 mb-3">
+                    <label for="dniCliente" class="form-label">
+                        DNI <span class="text-danger">*</span>
+                    </label>
+                    <input type="number" th:field="*{dniCliente}" class="form-control"
+                           th:classappend="${#fields.hasErrors('dniCliente')} ? 'is-invalid'" placeholder="Ingrese un DNI" required />
+                    <div class="invalid-feedback" th:errors="*{dniCliente}"></div>
+                </div>
+
+                <!-- RUC -->
+                <div class="col-md-6 mb-3">
+                    <label for="ruc" class="form-label">
+                        RUC <span class="text-danger">*</span>
+                    </label>
+                    <input type="number" th:field="*{ruc}" class="form-control"
+                           th:classappend="${#fields.hasErrors('ruc')} ? 'is-invalid'" placeholder="Ingrese un RUC" required />
+                    <div class="invalid-feedback" th:errors="*{ruc}"></div>
+                </div>
+
+                <!-- Nombre(s) -->
+                <div class="col-md-6 mb-3">
+                    <label for="nombre" class="form-label">
+                        Nombre(s) <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" th:field="*{nombre}" class="form-control"
+                           th:classappend="${#fields.hasErrors('nombre')} ? 'is-invalid'" placeholder="Ingrese un(os) nombre(s)" required />
+                    <div class="invalid-feedback" th:errors="*{nombre}"></div>
+                </div>
+
+                <!-- Apellido(s) -->
+                <div class="col-md-6 mb-3">
+                    <label for="apellido" class="form-label">
+                        Apellido(s) <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" th:field="*{apellido}" class="form-control"
+                           th:classappend="${#fields.hasErrors('apellido')} ? 'is-invalid'" placeholder="Ingrese un(os) apellido(s)" required />
+                    <div class="invalid-feedback" th:errors="*{apellido}"></div>
+                </div>
+
+                <!-- Teléfono -->
+                <div class="col-md-6 mb-3">
+                    <label for="telefono" class="form-label">
+                        Teléfono <span class="text-danger">*</span>
+                    </label>
+                    <input type="number" th:field="*{telefono}" class="form-control"
+                           th:classappend="${#fields.hasErrors('telefono')} ? 'is-invalid'" placeholder="Ingrese un teléfono" required />
+                    <div class="invalid-feedback" th:errors="*{telefono}"></div>
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="d-flex justify-content-end">
+                <a th:href="@{/clientes}" class="btn btn-secondary me-1 mb-0">
+                    <i class="fas fa-times me-1"></i>
+                    Cancelar
+                </a>
+
+                <button type="submit" class="btn btn-primary mb-0">
+                    <i class="fas fa-plus me-1"></i>
+                    Registrar
+                </button>
+            </div>
+        </form>
+    </div>
+</th:block>
+
+<th:block th:fragment="scripts">
+    <script>
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', () => {
+                input.classList.remove('is-invalid');
+            });
+        });
+
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('change', () => {
+                select.classList.remove('is-invalid');
+            });
+        });
+    </script>
+</th:block>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="fragments/layout :: layoutBase('Registros', 'Detalle', ~{::contenido}, ~{})">
+
+<th:block th:fragment="contenido">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+
+                <!-- Encabezado -->
+                <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+                    <h5>
+                        <i class="fa-solid fa-circle-info me-1"></i> Detalle del registro RUC10
+                    </h5>
+                </div>
+
+                <!-- Botones de exportación -->
+                <!-- Información del Consultor y Supervisor -->
+                <div class="px-4 pt-3">
+                    <div class="d-flex gap-2 mb-3">
+                        <a th:href="@{/registros}" class="btn btn-primary btn-sm mb-0">
+                            <i class="fa-solid fa-arrow-left me-1"></i> Retroceder
+                        </a>
+                        <button id="btn-exportar-pdf" class="btn btn-danger btn-sm mb-0">
+                            <i class="fa-solid fa-file-pdf me-1"></i> PDF
+                        </button>
+                        <button id="btn-exportar-excel" class="btn btn-success btn-sm mb-0">
+                            <i class="fa-solid fa-file-excel me-1"></i> Excel
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <strong>Consultor:</strong>
+                            <p class="mb-0" th:text="|${consultor.nombre} ${consultor.apellido}|"></p>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <strong>Supervisor:</strong>
+                            <p class="mb-0" th:text="|${supervisor.nombre} ${supervisor.apellido}|"></p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- cronograma -->
+                <!-- Cronograma (sin paginación) -->
+                <div class="card-body px-4 pt-4 pb-2">
+                    <h6 class="text-secondary text-uppercase">
+                        <i class="fa-solid fa-calendar-check me-2"></i> Cronograma de Instalación
+                    </h6>
+                    <hr class="horizontal dark mt-1 mb-3">
+                    <table class="table table-hover table-striped align-items-center mb-4">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ubicación</th>
+                            <th>Rango</th>
+                            <th>Fecha Registro</th>
+                            <th>Fecha Instalación</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><span class="badge bg-secondary text-white" th:text="${cronograma.idCronograma}"></span></td>
+                            <td th:text="${cronograma.ubicacionInstalacion}"></td>
+                            <td th:text="${cronograma.rangoInstalacion}"></td>
+                            <td th:text="${#temporals.format(cronograma.fechaRegistro, 'dd/MM/yyyy')}"></td>
+                            <td th:text="${#temporals.format(cronograma.fechaInstalacion, 'dd/MM/yyyy')}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Cliente -->
+                <div class="card-body px-4 pt-4 pb-2">
+                    <h6 class="text-secondary text-uppercase">
+                        <i class="fa-solid fa-user me-2"></i> Datos del Cliente
+                    </h6>
+                    <hr class="horizontal dark mt-1 mb-3">
+                    <table id="tabla-cliente" class="table table-hover table-striped align-items-center mb-4">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>DNI</th>
+                            <th>RUC</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Teléfono</th>
+                            <th>Estado</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><span class="badge bg-info text-white" th:text="${cliente.dniCliente}"></span></td>
+                            <td th:text="${cliente.dniCliente}"></td>
+                            <td th:text="${cliente.ruc}"></td>
+                            <td th:text="${cliente.nombre}"></td>
+                            <td th:text="${cliente.apellido}"></td>
+                            <td th:text="${cliente.telefono}"></td>
+                            <td>
+                                <span th:text="${cliente.activo ? 'Activo' : 'Inactivo'}"
+                                      th:classappend="${cliente.activo} ? 'text-success' : 'text-danger'"></span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Contacto Principal -->
+                <div class="card-body px-4 pt-4 pb-2">
+                    <h6 class="text-secondary text-uppercase">
+                        <i class="fa-solid fa-user-tie me-2"></i> Contacto Principal
+                    </h6>
+                    <hr class="horizontal dark mt-1 mb-3">
+                    <table id="tabla-contacto-principal" class="table table-hover table-striped align-items-center mb-4">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>DNI</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><span class="badge bg-warning text-dark" th:text="${contactoPrincipal.idContactoPrincipal}"></span></td>
+                            <td th:text="${contactoPrincipal.nombreContacto}"></td>
+                            <td th:text="${contactoPrincipal.dni}"></td>
+                            <td th:text="${contactoPrincipal.correo}"></td>
+                            <td th:text="${contactoPrincipal.telefono}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Contacto Secundario -->
+                <div class="card-body px-4 pt-4 pb-4">
+                    <h6 class="text-secondary text-uppercase">
+                        <i class="fa-solid fa-user-friends me-2"></i> Contacto Secundario
+                    </h6>
+                    <hr class="horizontal dark mt-1 mb-3">
+                    <table id="tabla-contacto-secundario" class="table table-hover table-striped align-items-center">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>DNI</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><span class="badge bg-danger text-white" th:text="${contactoSecundario.idContactoSecundario}"></span></td>
+                            <td th:text="${contactoSecundario.nombreContacto}"></td>
+                            <td th:text="${contactoSecundario.dni}"></td>
+                            <td th:text="${contactoSecundario.correo}"></td>
+                            <td th:text="${contactoSecundario.telefono}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para DataTable (solo aplicado a cronograma) -->
+<!--    <div th:replace="fragments/datatable-script :: datatableScript('tabla-cronograma')"></div>-->
+
+</th:block>
+</html>

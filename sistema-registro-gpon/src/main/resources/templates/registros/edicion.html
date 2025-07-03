@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="fragments/layout :: layoutBase('Registros', 'Editar', ~{::contenido}, ~{::scripts})">
+
+<th:block th:fragment="contenido">
+
+    <div class="card shadow-sm p-4">
+        <h5 class="mb-4">
+            <i class="fa-solid fa-pen me-1"></i>
+            Editar registro RUC10
+        </h5>
+
+        <form method="post" th:object="${ruc10DTO}" th:action="@{/registros/guardar}" novalidate>
+            <div class="row">
+                <!-- Código (oculto y deshabilitado) -->
+                <input type="hidden" th:field="*{idRegistro}"/>
+                <div class="col-md-12 mb-3">
+                    <label for="idRegistroVisible" class="form-label">
+                        Código
+                    </label>
+                    <input type="number" th:value="*{idRegistro}" class="form-control" id="idRegistroVisible" disabled />
+
+                    <label for="estados" class="form-label">
+                        Consultor
+                        <span class="text-danger">*</span>
+                    </label>
+                    <select th:field="*{idEstado}" class="form-select" required>
+                        <option th:each="c : ${estados}"
+                                th:value="${c.idEstado}"
+                                th:text="${c.descripcion}">
+                        </option>
+                    </select>
+                </div>
+
+                <!-- ==================================================== -->
+                <!-- PASO 1: DATOS DE LOS TRABAJADORES                    -->
+                <!-- ==================================================== -->
+                <h6 class="mb-3">
+                    <i class="fas fa-users-cog me-1"></i>
+                    Datos de los trabajadores
+                </h6>
+
+                <!-- Consultor -->
+                <div class="col-md-6 mb-3">
+                    <label for="idUsuarioConsultor" class="form-label">
+                        Consultor
+                        <span class="text-danger">*</span>
+                    </label>
+                    <select th:field="*{idUsuarioConsultor}" class="form-select" required>
+                        <option th:each="c : ${consultores}"
+                                th:value="${c.idUsuario}"
+                                th:text="${c.nombre + ' ' + c.apellido}">
+                        </option>
+                    </select>
+                </div>
+
+                <!-- Supervisor -->
+                <div class="col-md-6 mb-3">
+                    <label for="idUsuarioSupervisor" class="form-label">
+                        Supervisor
+                        <span class="text-danger">*</span>
+                    </label>
+                    <select th:field="*{idUsuarioSupervisor}" class="form-select" required>
+                        <option th:each="s : ${supervisores}"
+                                th:value="${s.idUsuario}"
+                                th:text="${s.nombre + ' ' + s.apellido}">
+                        </option>
+                    </select>
+                </div>
+
+                <!-- ==================================================== -->
+                <!-- PASO 2: DATOS DEL CLIENTE                            -->
+                <!-- ==================================================== -->
+                <h6 class="mb-3">
+                    <i class="fa-solid fa-building-user me-1"></i>
+                    Datos del cliente
+                </h6>
+
+                <!-- DNI -->
+                <div class="col-md-4 mb-3">
+                    <label for="dniCliente" class="form-label">
+                        DNI
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="number" th:field="*{dniCliente}" class="form-control"
+                           th:classappend="${#fields.hasErrors('dniCliente')} ? 'is-invalid'" placeholder="Ingrese un DNI" required />
+                    <div class="invalid-feedback" th:errors="*{dniCliente}"></div>
+                </div>
+
+                <!-- Nombre(s) -->
+                <div class="col-md-4 mb-3">
+                    <label for="nombreCliente" class="form-label">
+                        Nombre(s)
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" th:field="*{nombreCliente}" class="form-control"
+                           th:classappend="${#fields.hasErrors('nombreCliente')} ? 'is-invalid'" placeholder="Ingrese un(os) nombre(s)" required />
+                    <div class="invalid-feedback" th:errors="*{nombreCliente}"></div>
+                </div>
+
+                <!-- Apellido(s) -->
+                <div class="col-md-4 mb-3">
+                    <label for="apellidoCliente" class="form-label">
+                        Apellido(s)
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" th:field="*{apellidoCliente}" class="form-control"
+                           th:classappend="${#fields.hasErrors('apellidoCliente')} ? 'is-invalid'" placeholder="Ingrese un(os) apellido(s)" required />
+                    <div class="invalid-feedback" th:errors="*{apellidoCliente}"></div>
+                </div>
+
+                <!-- Teléfono -->
+                <div class="col-md-6 mb-3">
+                    <label for="telefonoCliente" class="form-label">
+                        Teléfono
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="number" th:field="*{telefonoCliente}" class="form-control"
+                           th:classappend="${#fields.hasErrors('telefonoCliente')} ? 'is-invalid'" placeholder="Ingrese un teléfono" required />
+                    <div class="invalid-feedback" th:errors="*{telefonoCliente}"></div>
+                </div>
+
+                <!-- RUC -->
+                <div class="col-md-6 mb-3">
+                    <label for="rucCliente" class="form-label">
+                        RUC
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="number" th:field="*{rucCliente}" class="form-control"
+                           th:classappend="${#fields.hasErrors('rucCliente')} ? 'is-invalid'" placeholder="Ingrese un RUC" required />
+                    <div class="invalid-feedback" th:errors="*{rucCliente}"></div>
+                </div>
+
+                <!-- ==================================================== -->
+                <!-- PASO 3: REPRESENTANTE LEGAL                          -->
+                <!-- ==================================================== -->
+                <h6 class="mb-3">
+                    <i class="fas fa-user-tie me-1"></i>
+                    Representante legal
+                </h6>
+
+                <!-- Nombre contacto -->
+                <div class="col-md-6 mb-3">
+                    <label for="nombreContacto" class="form-label">
+                        Nombre contacto
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" th:field="*{nombreContacto}" class="form-control"
+                           th:classappend="${#fields.hasErrors('nombreContacto')} ? 'is-invalid'" placeholder="Ingrese un nombre" required />
+                    <div class="invalid-feedback" th:errors="*{nombreContacto}"></div>
+                </div>
+
+                <!-- DNI -->
+                <div class="col-md-6 mb-3">
+                    <label for="dniContacto" class="form-label">
+                        DNI
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="number" th:field="*{dniContacto}" class="form-control"
+                           th:classappend="${#fields.hasErrors('dniContacto')} ? 'is-invalid'" placeholder="Ingrese un DNI" required />
+                    <div class="invalid-feedback" th:errors="*{dniContacto}"></div>
+                </div>
+
+                <!-- Correo electrónico -->
+                <div class="col-md-6 mb-3">
+                    <label for="correoContacto" class="form-label">
+                        Correo electrónico
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="email" th:field="*{correoContacto}" class="form-control"
+                           th:classappend="${#fields.hasErrors('correoContacto')} ? 'is-invalid'" placeholder="correo@ejemplo.com" required />
+                    <div class="invalid-feedback" th:errors="*{correoContacto}"></div>
+                </div>
+
+                <!-- Teléfono -->
+                <div class="col-md-6 mb-3">
+                    <label for="telefonoContacto" class="form-label">
+                        Teléfono
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="number" th:field="*{telefonoContacto}" class="form-control"
+                           th:classappend="${#fields.hasErrors('telefonoContacto')} ? 'is-invalid'" placeholder="Ingrese un teléfono" required />
+                    <div class="invalid-feedback" th:errors="*{telefonoContacto}"></div>
+                </div>
+
+                <!-- ==================================================== -->
+                <!-- PASO 4: CONTACTO AUTORIZADO                          -->
+                <!-- ==================================================== -->
+                <h6 class="mb-3">
+                    <i class="fas fa-user-check me-1"></i>
+                    Contacto autorizado
+                </h6>
+
+                <!-- Nombre completo -->
+                <div class="col-md-6 mb-3">
+                    <label for="nombreContactoSec" class="form-label">
+                        Nombre completo
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" th:field="*{nombreContactoSec}" class="form-control"
+                           th:classappend="${#fields.hasErrors('nombreContactoSec')} ? 'is-invalid'" placeholder="Ingrese un nombre" required />
+                    <div class="invalid-feedback" th:errors="*{nombreContactoSec}"></div>
+                </div>
+
+                <!-- DNI -->
+                <div class="col-md-6 mb-3">
+                    <label for="dniContactoSec" class="form-label">
+                        DNI
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="number" th:field="*{dniContactoSec}" class="form-control"
+                           th:classappend="${#fields.hasErrors('dniContactoSec')} ? 'is-invalid'" placeholder="Ingrese un DNI" required />
+                    <div class="invalid-feedback" th:errors="*{dniContactoSec}"></div>
+                </div>
+
+                <!-- Correo electrónico -->
+                <div class="col-md-6 mb-3">
+                    <label for="correoContactoSec" class="form-label">
+                        Correo electrónico
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="email" th:field="*{correoContactoSec}" class="form-control"
+                           th:classappend="${#fields.hasErrors('correoContactoSec')} ? 'is-invalid'" placeholder="correo@ejemplo.com" required />
+                    <div class="invalid-feedback" th:errors="*{correoContactoSec}"></div>
+                </div>
+
+                <!-- Teléfono -->
+                <div class="col-md-6 mb-3">
+                    <label for="telefonoContactoSec" class="form-label">
+                        Teléfono
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="number" th:field="*{telefonoContactoSec}" class="form-control"
+                           th:classappend="${#fields.hasErrors('telefonoContactoSec')} ? 'is-invalid'" placeholder="Ingrese un teléfono" required />
+                    <div class="invalid-feedback" th:errors="*{telefonoContactoSec}"></div>
+                </div>
+
+                <!-- ==================================================== -->
+                <!-- PASO 5: SERVICIO CONTRATADO                          -->
+                <!-- ==================================================== -->
+                <h6 class="mb-3">
+                    <i class="fas fa-file-contract me-1"></i>
+                    Servicio contratado
+                </h6>
+
+                <!-- Plan -->
+                <div class="col-md-6 mb-3">
+                    <label for="idPlan" class="form-label">
+                        Plan
+                        <span class="text-danger">*</span>
+                    </label>
+                    <select th:field="*{idPlan}" class="form-select" required>
+                        <option th:each="p : ${planes}"
+                                th:value="${p.idPlan}"
+                                th:text="${p.descripcion}">
+                        </option>
+                    </select>
+                </div>
+
+                <!-- Promoción -->
+                <div class="col-md-6 mb-3">
+                    <label for="idPromocion" class="form-label">
+                        Promoción
+                    </label>
+                    <select th:field="*{idPromocion}" class="form-select">
+                        <option value="-1">Ninguna</option>
+                        <option th:each="p : ${promociones}"
+                                th:value="${p.idPromocion}"
+                                th:text="${p.descripcion}">
+                        </option>
+                    </select>
+                </div>
+
+                <!-- PASO 5.1: IDs internos de sistema (opcional) -->
+                <h6 class="mb-3">
+                    <i class="fa-solid fa-database me-1"></i>
+                    IDs de integración interna
+                </h6>
+                <div class="col-md-4 mb-3">
+                    <label for="idCarrito" class="form-label">ID Carrito</label>
+                    <input type="text" th:field="*{idCarrito}" class="form-control"/>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="idInstalacion" class="form-label">ID Instalación</label>
+                    <input type="text" th:field="*{idInstalacion}" class="form-control"/>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="idSolicitud" class="form-label">ID Solicitud</label>
+                    <input type="text" th:field="*{idSolicitud}" class="form-control"/>
+                </div>
+
+
+            </div>
+                <!-- ==================================================== -->
+                <!-- PASO 6: CRONOGRAMA                                   -->
+                <!-- ==================================================== -->
+                <h6 class="mb-3">
+                    <i class="fas fa-calendar-alt me-1"></i>
+                    Cronograma
+                </h6>
+
+                <!-- Lugar instalacion -->
+                <div class="col-md-6 mb-3">
+                    <label for="lugarInstalacion" class="form-label">
+                        Lugar instalacion
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" th:field="*{lugarInstalacion}" class="form-control"
+                           th:classappend="${#fields.hasErrors('lugarInstalacion')} ? 'is-invalid'" placeholder="Ingrese un lugar" required />
+                    <div class="invalid-feedback" th:errors="*{lugarInstalacion}"></div>
+                </div>
+
+                <!-- Fecha instalación -->
+                <div class="col-md-3 mb-3">
+                    <label for="fechaInstalacion" class="form-label">
+                        Fecha instalación
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="date" class="form-control" th:field="*{fechaInstalacion}" required />
+                </div>
+
+                <!-- Rango horario -->
+                <div class="col-md-3 mb-3">
+                    <label for="rangoInstalacion" class="form-label">
+                        Rango horario
+                        <span class="text-danger">*</span>
+                    </label>
+                    <select class="form-select" th:field="*{rangoInstalacion}" required>
+                        <option value="manana">09:00 a 13:00 hr</option>
+                        <option value="tarde">13:00 a 18:00 hr</option>
+                    </select>
+                </div>
+
+                <!-- Observaciones -->
+                <div class="col-md-12 mb-3">
+                    <label for="observacion" class="form-label">
+                        Observaciones
+                    </label>
+                    <input type="text" class="form-control" th:field="*{observacion}" placeholder="Ingrese observaciones (opcional)" />
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="d-flex justify-content-end">
+                <a th:href="@{/registros}" class="btn btn-secondary me-1 mb-0">
+                    <i class="fas fa-times me-1"></i>
+                    Cancelar
+                </a>
+
+                <button type="submit" class="btn btn-primary mb-0">
+                    <i class="fas fa-save me-1"></i>
+                    Actualizar
+                </button>
+            </div>
+        </form>
+    </div>
+</th:block>
+
+<th:block th:fragment="scripts">
+    <script>
+    document.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', () => {
+            input.classList.remove('is-invalid');
+        });
+    });
+
+    document.querySelectorAll('select').forEach(select => {
+        select.addEventListener('change', () => {
+            select.classList.remove('is-invalid');
+        });
+    });
+    </script>
+</th:block>
+</html>

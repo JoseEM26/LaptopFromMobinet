@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragments/layout :: layoutBase('Usuarios', 'Editar', ~{::contenido}, ~{})">
+<th:block th:fragment="contenido">
+
+    <div class="card shadow-sm p-4">
+        <h5 class="mb-4">
+            <i class="fa-solid fa-pen me-1"></i>
+            Editar usuario
+        </h5>
+
+        <form th:action="@{/usuarios/guardar}" method="post" th:object="${usuario}">
+            <div class="row">
+                <!-- Codigo (oculto y deshabilitado) -->
+                <input type="hidden" th:field="*{idUsuario}" />
+                <div class="col-md-6 mb-3">
+                    <label for="idUsuarioVisible" class="form-label">
+                        Código
+                    </label>
+                    <input type="number" th:value="*{idUsuario}" class="form-control" id="idUsuarioVisible" disabled />
+                </div>
+
+                <!-- Nombre(s) -->
+                <div class="col-md-6 mb-3">
+                    <label for="nombre" class="form-label">
+                        Nombre(s)
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" th:field="*{nombre}" class="form-control" placeholder="Ingrese un(os) nombre(s)" required />
+                </div>
+
+                <!-- Apellido(s) -->
+                <div class="col-md-6 mb-3">
+                    <label for="apellido" class="form-label">
+                        Apellido(s)
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" th:field="*{apellido}" class="form-control" placeholder="Ingrese un(os) apellido(s)" required />
+                </div>
+
+                <!-- Correo -->
+                <div class="col-md-6 mb-3">
+                    <label for="correo" class="form-label">
+                        Correo electrónico
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" th:field="*{correo}" class="form-control" placeholder="correo@ejemplo.com" required />
+                </div>
+
+                <!-- Contraseña -->
+                <div class="col-md-6 mb-3">
+                    <label for="contrasena" class="form-label">
+                        Contraseña
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="password" th:field="*{contrasena}" class="form-control" placeholder="Ingrese una contraseña" required />
+                </div>
+
+                <!-- Rol -->
+                <div class="col-md-6 mb-3">
+                    <label for="rol" class="form-label">
+                        Rol
+                        <span class="text-danger">*</span>
+                    </label>
+                    <select th:field="*{rol}" class="form-select" required>
+                        <option value="-1">Seleccione un rol</option>
+                        <option th:each="rolItem : ${roles}"
+                                th:value="${rolItem.idRol}"
+                                th:text="${rolItem.descripcion}"
+                                th:selected="${usuario.rol != null and rolItem.idRol == usuario.rol.idRol}">
+                        </option>
+                    </select>
+                </div>
+
+                <!-- Estado (oculto)-->
+                <input type="hidden" th:field="*{estado}" />
+            </div>
+
+            <!-- Botones -->
+            <div class="col-12 d-flex justify-content-end mt-2">
+                <a th:href="@{/usuarios}" class="btn btn-secondary me-1 mb-0">
+                    <i class="fas fa-times me-1"></i>
+                    Cancelar
+                </a>
+
+                <button type="submit" class="btn btn-primary mb-0">
+                    <i class="fas fa-save me-1"></i>
+                    Actualizar
+                </button>
+            </div>
+        </form>
+    </div>
+</th:block>
+</html>
