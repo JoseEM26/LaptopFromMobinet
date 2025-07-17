@@ -27,7 +27,7 @@
 									<i class="fa-solid fa-filter text-secondary"></i>
 								</span>
                                 <select class="form-select border-secondary" th:field="*{idEstado}" onchange="this.form.submit()">
-                                    <option value="0" selected >Todos los estados</option>
+                                    <option value="0" selected >---selected-</option>
                                     <option th:each="item : ${lstEstados}" th:value="${item.idEstado}" th:text="${item.descripcion}"></option>
                                 </select>
                             </div>

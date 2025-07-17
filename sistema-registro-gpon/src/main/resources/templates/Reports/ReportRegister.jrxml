@@ -105,8 +105,7 @@ JOIN Cliente c ON r.DniCliente = c.DniCliente
 JOIN Usuario uConsultor ON r.IdUsuarioConsultor = uConsultor.IdUsuario
 JOIN Usuario uSupervisor ON r.IdUsuarioSupervisor = uSupervisor.IdUsuario
 JOIN estadoregistro e ON e.IdEstado = r.IdEstado
-WHERE ($P{id} = 0 OR r.IdEstado = $P{id})
-]]>
+WHERE ($P{id} = 0 OR r.IdEstado = $P{id})]]>
 	</queryString>
 	<field name="IdRegistro" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="IdRegistro"/>

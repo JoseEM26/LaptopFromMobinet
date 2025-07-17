@@ -6,5 +6,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class RegistroFilter {
-    private Integer idEstado;
+    private Integer idEstado=0;
 }

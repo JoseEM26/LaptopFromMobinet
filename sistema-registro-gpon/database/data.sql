@@ -85,6 +85,7 @@ INSERT INTO EstadoRegistro(Descripcion) VALUES
 ('Sin cobertura'),
 ('Deuda');
 
+
 INSERT INTO ContactoPrincipal (NombreContacto, Dni, Telefono, Correo) VALUES
 ('Juan Pérez', '12345678', '987654321', 'juan.perez@example.com'),
 ('María Gómez', '23456789', '912345678', 'maria.gomez@example.com'),
