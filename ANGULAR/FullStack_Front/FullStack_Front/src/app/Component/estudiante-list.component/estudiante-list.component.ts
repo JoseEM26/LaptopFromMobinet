@@ -3,6 +3,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EstudianteService } from '../../Service/estudiante-service';
 import { Estudiante } from '../../Model/estudiante';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-estudiante-list',
@@ -13,6 +14,7 @@ import { Estudiante } from '../../Model/estudiante';
 })
 export class EstudianteListComponent implements OnInit {
   private estudianteService = inject(EstudianteService);
+  private router=inject(Router)
 
   estudiantes: Estudiante[] = [];
 
@@ -24,6 +26,9 @@ export class EstudianteListComponent implements OnInit {
     this.estudianteService.listarEstudiantes().subscribe(x=>{
       this.estudiantes=x
     })
+  }
+  goToCreate(){
+      this.router.navigate(['formularioEstudiante'])
   }
 
   

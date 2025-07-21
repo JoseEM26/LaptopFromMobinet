@@ -5,7 +5,7 @@ import { EstudianteFormComponent } from "./Component/estudiante-form-component/e
 
 @Component({
   selector: 'app-root',
-  imports: [EstudianteListComponent, EstudianteFormComponent],
+  imports: [EstudianteListComponent, EstudianteFormComponent, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

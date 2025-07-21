@@ -3,6 +3,7 @@ import { EstudianteService } from '../../Service/estudiante-service';
 import { Estudiante } from '../../Model/estudiante';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-estudiante-form-component',
@@ -15,10 +16,12 @@ export class EstudianteFormComponent {
   
   estudiante:Estudiante=new Estudiante();
   private service=inject(EstudianteService);
+  private route=inject(Router);
 
   create(){
     this.service.create(this.estudiante).subscribe(x=>{
       console.log("SE CREO UN NUEVO STUDIANTE"+x.idEstudiante);
+      this.route.navigate(['/'])
     })
   }
 }

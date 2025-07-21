@@ -14,6 +14,7 @@ export const appConfig: ApplicationConfig = {
     //para hacer peticiones HTTP
     provideHttpClient(),
     //para ver los modulos de el form
-    importProvidersFrom(HttpClientModule, FormsModule,ReactiveFormsModule)
+    importProvidersFrom(HttpClientModule, FormsModule,ReactiveFormsModule),
+    
   ]
 };
