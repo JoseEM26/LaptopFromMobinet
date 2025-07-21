@@ -31,7 +31,9 @@ export class EstudianteListComponent implements OnInit {
       this.router.navigate(['formularioEstudiante'])
   }
 
-  
+    goEditar(idEstudiante:number | undefined){
+    this.router.navigate(["formularioEstudiante",idEstudiante])
+  }
 
 
 

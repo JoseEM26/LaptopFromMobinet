@@ -6,6 +6,7 @@ import { NotFoundComponent } from './Component/not-found-component/not-found-com
 export const routes: Routes = [
     {path:"" , component:EstudianteListComponent},
     {path:"formularioEstudiante" , component:EstudianteFormComponent},
-      { path: '**', component: NotFoundComponent }, // ruta comodín (404)
+    {path:"formularioEstudiante/:id" , component:EstudianteFormComponent},
+    { path: '**', component: NotFoundComponent }
 
 ];
