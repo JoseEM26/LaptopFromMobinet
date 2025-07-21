@@ -1,0 +1,65 @@
+<div class="container mt-5">
+  <h2 class="mb-4">Registro de Estudiante</h2>
+  <form (ngSubmit)="create()">
+    <div class="mb-3">
+      <label for="idRegistro" class="form-label">idRegistro</label>
+      <input
+        type="text"
+        class="form-control"
+        id="idEstudiante"
+        placeholder="Ingrese ID"
+        [(ngModel)]="estudiante.idEstudiante"
+        name="idEstudiante"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombre"
+        placeholder="Ingrese nombre"
+        [(ngModel)]="estudiante.nombre"
+        name="nombre"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="apellido" class="form-label">Apellido</label>
+      <input
+        type="text"
+        class="form-control"
+        id="apellido"
+        placeholder="Ingrese apellido"
+        [(ngModel)]="estudiante.apellido"
+        name="apellido"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="telefono" class="form-label">Teléfono</label>
+      <input
+        type="tel"
+        class="form-control"
+        id="telefono"
+        placeholder="Ingrese teléfono"
+        [(ngModel)]="estudiante.telefono"
+        name="telefono"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="correo" class="form-label">Correo Electrónico</label>
+      <input
+        type="email"
+        class="form-control"
+        id="correo"
+        placeholder="Ingrese correo electrónico"
+        [(ngModel)]="estudiante.correo"
+        name="correo"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </form>
+</div>
