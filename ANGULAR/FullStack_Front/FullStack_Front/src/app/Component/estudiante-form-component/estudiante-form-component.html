@@ -1,7 +1,13 @@
 <div class="container mt-5">
-  <h2 class="mb-4">Registro de Estudiante</h2>
+  <h2 class="mb-4">
+    {{
+      !estudiante.idEstudiante
+        ? "Registro de Estudiante"
+        : "Update de estudiante"
+    }}
+  </h2>
   <form (ngSubmit)="create()">
-    <div class="mb-3">
+    <div class="mb-3" *ngIf="estudiante.idEstudiante">
       <label for="idRegistro" class="form-label">idRegistro</label>
       <input
         type="text"
@@ -60,7 +66,11 @@
       />
     </div>
 
-    <button type="submit" class="btn btn-primary">Guardar</button>
-    <button type="submit" class="btn btn-success" (click)="goHome()">Volver</button>
+    <button type="submit" class="btn btn-success" (click)="goHome()">
+      Volver
+    </button>
+    <button type="submit" class="btn btn-primary">
+      {{ estudiante.idEstudiante ? "Actualizar" : "Create" }}
+    </button>
   </form>
 </div>
