@@ -1,0 +1,13 @@
+/* Centrar y dar un poco de estilo */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.vh-100 {
+  height: 100vh;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
