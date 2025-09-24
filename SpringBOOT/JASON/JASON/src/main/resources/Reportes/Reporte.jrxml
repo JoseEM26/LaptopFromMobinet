@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="78f8c101-82ba-4c69-97a2-af7dd02bdc4e">
+	<parameter name="nombre" class="java.lang.String"/>
+	<parameter name="apellido" class="java.lang.String"/>
+	<parameter name="edad" class="java.lang.Integer"/>
+	<queryString><![CDATA[]]></queryString>
+
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+
+	<title>
+		<band height="120" splitType="Stretch">
+			<image>
+				<reportElement positionType="FixRelativeToBottom" x="360" y="0" width="194" height="110" uuid="527b21a5-a97e-4ba1-af32-e29b56f463e8"/>
+				<imageExpression><![CDATA["https://cdn.pixabay.com/photo/2017/03/27/15/20/factory-2179347__340.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Persona]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+
+	<detail>
+		<band height="150" splitType="Stretch">
+			<staticText>
+				<reportElement x="88" y="0" width="100" height="30"/>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="0" width="200" height="30"/>
+				<textFieldExpression><![CDATA[$P{nombre}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="88" y="40" width="100" height="30"/>
+				<text><![CDATA[Apellido:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="40" width="200" height="30"/>
+				<textFieldExpression><![CDATA[$P{apellido}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="88" y="80" width="100" height="30"/>
+				<text><![CDATA[Edad:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="80" width="200" height="30"/>
+				<textFieldExpression><![CDATA[$P{edad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
