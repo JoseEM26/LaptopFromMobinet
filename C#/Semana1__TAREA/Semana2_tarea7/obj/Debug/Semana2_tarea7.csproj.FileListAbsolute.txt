@@ -1,0 +1,7 @@
+C:\Users\ADMIN\Pictures\C#\Semana1_tareas\Semana1__TAREA\Semana2_tarea7\bin\Debug\Semana2_tarea7.exe.config
+C:\Users\ADMIN\Pictures\C#\Semana1_tareas\Semana1__TAREA\Semana2_tarea7\bin\Debug\Semana2_tarea7.exe
+C:\Users\ADMIN\Pictures\C#\Semana1_tareas\Semana1__TAREA\Semana2_tarea7\bin\Debug\Semana2_tarea7.pdb
+C:\Users\ADMIN\Pictures\C#\Semana1_tareas\Semana1__TAREA\Semana2_tarea7\obj\Debug\Semana2_tarea7.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Pictures\C#\Semana1_tareas\Semana1__TAREA\Semana2_tarea7\obj\Debug\Semana2_tarea7.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Pictures\C#\Semana1_tareas\Semana1__TAREA\Semana2_tarea7\obj\Debug\Semana2_tarea7.exe
+C:\Users\ADMIN\Pictures\C#\Semana1_tareas\Semana1__TAREA\Semana2_tarea7\obj\Debug\Semana2_tarea7.pdb

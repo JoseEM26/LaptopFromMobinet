@@ -1,0 +1,7 @@
+C:\Users\ADMIN\Pictures\C#\semana2_practicasExamen\Semana2_Arreglos\bin\Debug\Semana2_Arreglos.exe.config
+C:\Users\ADMIN\Pictures\C#\semana2_practicasExamen\Semana2_Arreglos\bin\Debug\Semana2_Arreglos.exe
+C:\Users\ADMIN\Pictures\C#\semana2_practicasExamen\Semana2_Arreglos\bin\Debug\Semana2_Arreglos.pdb
+C:\Users\ADMIN\Pictures\C#\semana2_practicasExamen\Semana2_Arreglos\obj\Debug\Semana2_Arreglos.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Pictures\C#\semana2_practicasExamen\Semana2_Arreglos\obj\Debug\Semana2_Arreglos.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Pictures\C#\semana2_practicasExamen\Semana2_Arreglos\obj\Debug\Semana2_Arreglos.exe
+C:\Users\ADMIN\Pictures\C#\semana2_practicasExamen\Semana2_Arreglos\obj\Debug\Semana2_Arreglos.pdb

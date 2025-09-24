@@ -1,0 +1,11 @@
+C:\Users\ADMIN\Pictures\C#\log4net\log4net\bin\Debug\log4net.config
+C:\Users\ADMIN\Pictures\C#\log4net\log4net\bin\Debug\log4net.exe.config
+C:\Users\ADMIN\Pictures\C#\log4net\log4net\bin\Debug\log4net.exe
+C:\Users\ADMIN\Pictures\C#\log4net\log4net\bin\Debug\log4net.pdb
+C:\Users\ADMIN\Pictures\C#\log4net\log4net\bin\Debug\log4net.dll
+C:\Users\ADMIN\Pictures\C#\log4net\log4net\bin\Debug\log4net.xml
+C:\Users\ADMIN\Pictures\C#\log4net\log4net\obj\Debug\log4net.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Pictures\C#\log4net\log4net\obj\Debug\log4net.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Pictures\C#\log4net\log4net\obj\Debug\log4net.csproj.Up2Date
+C:\Users\ADMIN\Pictures\C#\log4net\log4net\obj\Debug\log4net.exe
+C:\Users\ADMIN\Pictures\C#\log4net\log4net\obj\Debug\log4net.pdb

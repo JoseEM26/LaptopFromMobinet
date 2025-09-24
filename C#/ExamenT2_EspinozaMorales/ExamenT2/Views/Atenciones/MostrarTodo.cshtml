@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ExamenT2.Models.Atenciones>
+
+@{
+    ViewBag.Title = "MostrarTodo";
+}
+
+<h2>MostrarTodo</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TicketID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaProgramada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProveedorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoTicket)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadoID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostoAtencion)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaProgramada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProveedorID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoTicket)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostoAtencion)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditTipo", new { id = item.TicketID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TicketID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TicketID })
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.ActionLink("return to Index", "Index", "TicketAndTipo")

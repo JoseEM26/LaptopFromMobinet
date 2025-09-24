@@ -1,0 +1,50 @@
+﻿@model ExamenT2.Models.Tipo
+
+@{
+    ViewBag.Title = "DetailsTipo";
+}
+
+<h2>DetailsTipo</h2>
+
+<div>
+    <h4>Tipo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoriaID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoriaID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditTipo", new { id = Model.TipoID }) |
+    @Html.ActionLink("Back to List", "MostrarTodoTipo")
+</p>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<POOI_EF_AndyChacchiLuque.Models.Contribuyente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>CONTRIBUYENTES</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.dniCont)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomCont)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.direcCont)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailCont)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idpais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fonoCont)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.dniCont)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomCont)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direcCont)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailCont)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idpais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fonoCont)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.dniCont  }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.dniCont }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.dniCont })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<POOI_Semana04.Models.Pais>
+
+@{
+    ViewBag.Title = "Consulta";
+}
+
+<h2>Consulta</h2>
+
+
+<form>
+
+    <label>Codigo Pais</label>
+    @Html.TextBox("txtCod", "", new { @class= "form-control" })
+
+    <label>Nombre Pais</label>
+    @Html.TextBox("txtNom", "", new { @class = "form-control" })
+
+    <label>Region</label>
+    @Html.DropDownList("cboRegiones", (SelectList) ViewBag.comboRegiones, 
+                "Seleccione", new { @class="form-control"})
+
+    <button class="btn btn-primary">Consultar</button>
+</form>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.country_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.country_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.region_id)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.country_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.country_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.region_id)
+        </td>
+    </tr>
+}
+
+</table>

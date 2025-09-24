@@ -1,0 +1,94 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\Pictures\\C#\\POOI_Semana06_Solucion\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{89D92843-241E-4808-A0EA-362326393030}|POOI_Semana04\\POOI_Semana04.csproj|c:\\users\\admin\\pictures\\c#\\pooi_semana06_solucion\\pooi_semana04\\dao\\daoimpl\\paisdaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89D92843-241E-4808-A0EA-362326393030}|POOI_Semana04\\POOI_Semana04.csproj|solutionrelative:pooi_semana04\\dao\\daoimpl\\paisdaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89D92843-241E-4808-A0EA-362326393030}|POOI_Semana04\\POOI_Semana04.csproj|c:\\users\\admin\\pictures\\c#\\pooi_semana06_solucion\\pooi_semana04\\dao\\daoimpl\\regiondaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89D92843-241E-4808-A0EA-362326393030}|POOI_Semana04\\POOI_Semana04.csproj|solutionrelative:pooi_semana04\\dao\\daoimpl\\regiondaoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89D92843-241E-4808-A0EA-362326393030}|POOI_Semana04\\POOI_Semana04.csproj|c:\\users\\admin\\pictures\\c#\\pooi_semana06_solucion\\pooi_semana04\\controllers\\paiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89D92843-241E-4808-A0EA-362326393030}|POOI_Semana04\\POOI_Semana04.csproj|solutionrelative:pooi_semana04\\controllers\\paiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89D92843-241E-4808-A0EA-362326393030}|POOI_Semana04\\POOI_Semana04.csproj|c:\\users\\admin\\pictures\\c#\\pooi_semana06_solucion\\pooi_semana04\\views\\pais\\consulta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89D92843-241E-4808-A0EA-362326393030}|POOI_Semana04\\POOI_Semana04.csproj|solutionrelative:pooi_semana04\\views\\pais\\consulta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 392,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PaisController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\POOI_Semana06_Solucion\\POOI_Semana04\\Controllers\\PaisController.cs",
+              "RelativeDocumentMoniker": "POOI_Semana04\\Controllers\\PaisController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\POOI_Semana06_Solucion\\POOI_Semana04\\Controllers\\PaisController.cs",
+              "RelativeToolTip": "POOI_Semana04\\Controllers\\PaisController.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAYwH4AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T03:39:59.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PaisDaoImpl.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\POOI_Semana06_Solucion\\POOI_Semana04\\dao\\daoImpl\\PaisDaoImpl.cs",
+              "RelativeDocumentMoniker": "POOI_Semana04\\dao\\daoImpl\\PaisDaoImpl.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\POOI_Semana06_Solucion\\POOI_Semana04\\dao\\daoImpl\\PaisDaoImpl.cs",
+              "RelativeToolTip": "POOI_Semana04\\dao\\daoImpl\\PaisDaoImpl.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACsAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T03:39:51.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegionDaoImpl.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\POOI_Semana06_Solucion\\POOI_Semana04\\dao\\daoImpl\\RegionDaoImpl.cs",
+              "RelativeDocumentMoniker": "POOI_Semana04\\dao\\daoImpl\\RegionDaoImpl.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\POOI_Semana06_Solucion\\POOI_Semana04\\dao\\daoImpl\\RegionDaoImpl.cs",
+              "RelativeToolTip": "POOI_Semana04\\dao\\daoImpl\\RegionDaoImpl.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T03:39:34.333Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 392,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Consulta.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\POOI_Semana06_Solucion\\POOI_Semana04\\Views\\Pais\\Consulta.cshtml",
+              "RelativeDocumentMoniker": "POOI_Semana04\\Views\\Pais\\Consulta.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\POOI_Semana06_Solucion\\POOI_Semana04\\Views\\Pais\\Consulta.cshtml",
+              "RelativeToolTip": "POOI_Semana04\\Views\\Pais\\Consulta.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-20T03:40:29.072Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

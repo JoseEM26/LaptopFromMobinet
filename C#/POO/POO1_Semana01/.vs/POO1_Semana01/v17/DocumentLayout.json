@@ -1,0 +1,123 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{68C7ED10-C8E3-4B74-80F6-DA151B6697F3}|ejemplo_07\\ejemplo_07.csproj|c:\\users\\admin\\pictures\\c#\\poo\\poo1_semana01\\ejemplo_07\\log4net.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{68C7ED10-C8E3-4B74-80F6-DA151B6697F3}|ejemplo_07\\ejemplo_07.csproj|solutionrelative:ejemplo_07\\log4net.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68C7ED10-C8E3-4B74-80F6-DA151B6697F3}|ejemplo_07\\ejemplo_07.csproj|c:\\users\\admin\\pictures\\c#\\poo\\poo1_semana01\\ejemplo_07\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68C7ED10-C8E3-4B74-80F6-DA151B6697F3}|ejemplo_07\\ejemplo_07.csproj|solutionrelative:ejemplo_07\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66358409-1F11-4F9A-8BDC-414DF2321EB7}|POO1_Ejercisio1\\POO1_Ejercisio1.csproj|c:\\users\\admin\\pictures\\c#\\poo\\poo1_semana01\\poo1_ejercisio1\\views\\estudiante\\registro.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{66358409-1F11-4F9A-8BDC-414DF2321EB7}|POO1_Ejercisio1\\POO1_Ejercisio1.csproj|solutionrelative:poo1_ejercisio1\\views\\estudiante\\registro.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66358409-1F11-4F9A-8BDC-414DF2321EB7}|POO1_Ejercisio1\\POO1_Ejercisio1.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\poo1_ejercisio1\\controllers\\estudiantecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66358409-1F11-4F9A-8BDC-414DF2321EB7}|POO1_Ejercisio1\\POO1_Ejercisio1.csproj|solutionrelative:poo1_ejercisio1\\controllers\\estudiantecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66358409-1F11-4F9A-8BDC-414DF2321EB7}|POO1_Ejercisio1\\POO1_Ejercisio1.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\poo1_ejercisio1\\views\\view.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{66358409-1F11-4F9A-8BDC-414DF2321EB7}|POO1_Ejercisio1\\POO1_Ejercisio1.csproj|solutionrelative:poo1_ejercisio1\\views\\view.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66358409-1F11-4F9A-8BDC-414DF2321EB7}|POO1_Ejercisio1\\POO1_Ejercisio1.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\poo1_ejercisio1\\models\\estudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66358409-1F11-4F9A-8BDC-414DF2321EB7}|POO1_Ejercisio1\\POO1_Ejercisio1.csproj|solutionrelative:poo1_ejercisio1\\models\\estudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "log4net.config",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\ejemplo_07\\log4net.config",
+              "RelativeDocumentMoniker": "ejemplo_07\\log4net.config",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\ejemplo_07\\log4net.config",
+              "RelativeToolTip": "ejemplo_07\\log4net.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-09-14T19:40:17.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\ejemplo_07\\Program.cs",
+              "RelativeDocumentMoniker": "ejemplo_07\\Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\ejemplo_07\\Program.cs",
+              "RelativeToolTip": "ejemplo_07\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-14T19:39:58.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Registro.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\POO1_Ejercisio1\\Views\\Estudiante\\Registro.cshtml",
+              "RelativeDocumentMoniker": "POO1_Ejercisio1\\Views\\Estudiante\\Registro.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\POO1_Ejercisio1\\Views\\Estudiante\\Registro.cshtml",
+              "RelativeToolTip": "POO1_Ejercisio1\\Views\\Estudiante\\Registro.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-10T18:00:01.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EstudianteController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\POO1_Ejercisio1\\Controllers\\EstudianteController.cs",
+              "RelativeDocumentMoniker": "POO1_Ejercisio1\\Controllers\\EstudianteController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\POO1_Ejercisio1\\Controllers\\EstudianteController.cs",
+              "RelativeToolTip": "POO1_Ejercisio1\\Controllers\\EstudianteController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T17:57:01.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "View.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\POO1_Ejercisio1\\Views\\View.cshtml",
+              "RelativeDocumentMoniker": "POO1_Ejercisio1\\Views\\View.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\POO1_Ejercisio1\\Views\\View.cshtml",
+              "RelativeToolTip": "POO1_Ejercisio1\\Views\\View.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-10T17:56:20.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Estudiante.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\POO1_Ejercisio1\\Models\\Estudiante.cs",
+              "RelativeDocumentMoniker": "POO1_Ejercisio1\\Models\\Estudiante.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\POO\\POO1_Semana01\\POO1_Ejercisio1\\Models\\Estudiante.cs",
+              "RelativeToolTip": "POO1_Ejercisio1\\Models\\Estudiante.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T17:53:19.022Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

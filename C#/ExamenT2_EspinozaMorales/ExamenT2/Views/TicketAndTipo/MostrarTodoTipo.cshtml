@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ExamenT2.Models.Tipo>
+
+@{
+    ViewBag.Title = "MostrarTodoTipo";
+}
+
+<h2>MostrarTodoTipo</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateTipo")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoriaID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoriaID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditTipo", new { id = item.TipoID }) |
+                @Html.ActionLink("Details", "DetailsTipo", new { id = item.TipoID }) |
+                @Html.ActionLink("Delete", "DeleteTipo", new { id = item.TipoID })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<br />
+<br />
+<strong>
+    @Html.ActionLink("Return to the index", "Index")
+</strong>

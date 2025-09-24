@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\Pictures\\C#\\semana2_practicasExamen\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{43C22D3D-3469-4853-B543-1D4142B809E5}|semana2_interfaces\\semana2_interfaces.csproj|c:\\users\\admin\\pictures\\c#\\semana2_practicasexamen\\semana2_interfaces\\bebidasalcoholicas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43C22D3D-3469-4853-B543-1D4142B809E5}|semana2_interfaces\\semana2_interfaces.csproj|solutionrelative:semana2_interfaces\\bebidasalcoholicas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43C22D3D-3469-4853-B543-1D4142B809E5}|semana2_interfaces\\semana2_interfaces.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\semana2_practicasExamen\\semana2_interfaces\\bebidas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43C22D3D-3469-4853-B543-1D4142B809E5}|semana2_interfaces\\semana2_interfaces.csproj|solutionrelative:semana2_interfaces\\bebidas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Bebidas.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\semana2_practicasExamen\\semana2_interfaces\\Bebidas.cs",
+              "RelativeDocumentMoniker": "semana2_interfaces\\Bebidas.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\semana2_practicasExamen\\semana2_interfaces\\Bebidas.cs",
+              "RelativeToolTip": "semana2_interfaces\\Bebidas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T20:33:29.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "bebidasAlcoholicas.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\semana2_practicasExamen\\semana2_interfaces\\bebidasAlcoholicas.cs",
+              "RelativeDocumentMoniker": "semana2_interfaces\\bebidasAlcoholicas.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\semana2_practicasExamen\\semana2_interfaces\\bebidasAlcoholicas.cs",
+              "RelativeToolTip": "semana2_interfaces\\bebidasAlcoholicas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T20:31:44.451Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

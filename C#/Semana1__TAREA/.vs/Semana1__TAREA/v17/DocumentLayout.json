@@ -1,0 +1,294 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{63B58190-B66B-4634-B0DC-0019C18F9F56}|Semana1__TAREA\\Semana2__tarea1.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana1__tarea\\celular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63B58190-B66B-4634-B0DC-0019C18F9F56}|Semana1__TAREA\\Semana2__tarea1.csproj|solutionrelative:semana1__tarea\\celular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63B58190-B66B-4634-B0DC-0019C18F9F56}|Semana1__TAREA\\Semana2__tarea1.csproj|c:\\users\\admin\\pictures\\c#\\semana1_tareas\\semana1__tarea\\semana1__tarea\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63B58190-B66B-4634-B0DC-0019C18F9F56}|Semana1__TAREA\\Semana2__tarea1.csproj|solutionrelative:semana1__tarea\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF76EB20-4476-434A-9E89-8950020F60D8}|Semana2_tarea2\\Semana2_tarea2.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana2_tarea2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF76EB20-4476-434A-9E89-8950020F60D8}|Semana2_tarea2\\Semana2_tarea2.csproj|solutionrelative:semana2_tarea2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF76EB20-4476-434A-9E89-8950020F60D8}|Semana2_tarea2\\Semana2_tarea2.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana2_tarea2\\computadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF76EB20-4476-434A-9E89-8950020F60D8}|Semana2_tarea2\\Semana2_tarea2.csproj|solutionrelative:semana2_tarea2\\computadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36FE3A90-D1EE-4F7D-A239-564F30F924E2}|Semana2_tarea3\\Semana2_tarea3.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana2_tarea3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36FE3A90-D1EE-4F7D-A239-564F30F924E2}|Semana2_tarea3\\Semana2_tarea3.csproj|solutionrelative:semana2_tarea3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36FE3A90-D1EE-4F7D-A239-564F30F924E2}|Semana2_tarea3\\Semana2_tarea3.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana2_tarea3\\edificio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36FE3A90-D1EE-4F7D-A239-564F30F924E2}|Semana2_tarea3\\Semana2_tarea3.csproj|solutionrelative:semana2_tarea3\\edificio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49D76BD7-4816-4FAE-9143-20034F1FD91A}|Semana2_tarea4\\Semana2_tarea4.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana2_tarea4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49D76BD7-4816-4FAE-9143-20034F1FD91A}|Semana2_tarea4\\Semana2_tarea4.csproj|solutionrelative:semana2_tarea4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49D76BD7-4816-4FAE-9143-20034F1FD91A}|Semana2_tarea4\\Semana2_tarea4.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana2_tarea4\\obreros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49D76BD7-4816-4FAE-9143-20034F1FD91A}|Semana2_tarea4\\Semana2_tarea4.csproj|solutionrelative:semana2_tarea4\\obreros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33C53E3B-5E8A-4CB1-8A51-2DD0693867E6}|Semana2_tarea5\\Semana2_tarea5.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana2_tarea5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33C53E3B-5E8A-4CB1-8A51-2DD0693867E6}|Semana2_tarea5\\Semana2_tarea5.csproj|solutionrelative:semana2_tarea5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4982BB7D-D8B7-4D55-906E-FB82DB92470A}|Semana2_tarea6\\Semana2_tarea6.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana2_tarea6\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4982BB7D-D8B7-4D55-906E-FB82DB92470A}|Semana2_tarea6\\Semana2_tarea6.csproj|solutionrelative:semana2_tarea6\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4982BB7D-D8B7-4D55-906E-FB82DB92470A}|Semana2_tarea6\\Semana2_tarea6.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana2_tarea6\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4982BB7D-D8B7-4D55-906E-FB82DB92470A}|Semana2_tarea6\\Semana2_tarea6.csproj|solutionrelative:semana2_tarea6\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED090FD1-C23D-4931-BCA5-784A6D7766AF}|Semana2_tarea7\\Semana2_tarea7.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana2_tarea7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED090FD1-C23D-4931-BCA5-784A6D7766AF}|Semana2_tarea7\\Semana2_tarea7.csproj|solutionrelative:semana2_tarea7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED090FD1-C23D-4931-BCA5-784A6D7766AF}|Semana2_tarea7\\Semana2_tarea7.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana2_tarea7\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED090FD1-C23D-4931-BCA5-784A6D7766AF}|Semana2_tarea7\\Semana2_tarea7.csproj|solutionrelative:semana2_tarea7\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B30A47-2241-4C80-91E9-F3433B3B48D8}|Semana2_tarea8\\Semana2_tarea8.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana2_tarea8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B30A47-2241-4C80-91E9-F3433B3B48D8}|Semana2_tarea8\\Semana2_tarea8.csproj|solutionrelative:semana2_tarea8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B30A47-2241-4C80-91E9-F3433B3B48D8}|Semana2_tarea8\\Semana2_tarea8.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana2_tarea8\\asesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B30A47-2241-4C80-91E9-F3433B3B48D8}|Semana2_tarea8\\Semana2_tarea8.csproj|solutionrelative:semana2_tarea8\\asesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E0A2E36-80E1-454F-ADB9-BDF1F3557AB5}|Semana2_tarea9\\Semana2_tarea9.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana2_tarea9\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E0A2E36-80E1-454F-ADB9-BDF1F3557AB5}|Semana2_tarea9\\Semana2_tarea9.csproj|solutionrelative:semana2_tarea9\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E0A2E36-80E1-454F-ADB9-BDF1F3557AB5}|Semana2_tarea9\\Semana2_tarea9.csproj|C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\semana2_tarea9\\pelota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E0A2E36-80E1-454F-ADB9-BDF1F3557AB5}|Semana2_tarea9\\Semana2_tarea9.csproj|solutionrelative:semana2_tarea9\\pelota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana1__TAREA\\Program.cs",
+              "RelativeDocumentMoniker": "Semana1__TAREA\\Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana1__TAREA\\Program.cs",
+              "RelativeToolTip": "Semana1__TAREA\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T04:11:03.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "celular.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana1__TAREA\\celular.cs",
+              "RelativeDocumentMoniker": "Semana1__TAREA\\celular.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana1__TAREA\\celular.cs",
+              "RelativeToolTip": "Semana1__TAREA\\celular.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T04:10:57.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea9\\Program.cs",
+              "RelativeDocumentMoniker": "Semana2_tarea9\\Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea9\\Program.cs",
+              "RelativeToolTip": "Semana2_tarea9\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T04:02:58.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "pelota.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea9\\pelota.cs",
+              "RelativeDocumentMoniker": "Semana2_tarea9\\pelota.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea9\\pelota.cs",
+              "RelativeToolTip": "Semana2_tarea9\\pelota.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T04:02:58.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea8\\Program.cs",
+              "RelativeDocumentMoniker": "Semana2_tarea8\\Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea8\\Program.cs",
+              "RelativeToolTip": "Semana2_tarea8\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T04:02:29.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "asesor.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea8\\asesor.cs",
+              "RelativeDocumentMoniker": "Semana2_tarea8\\asesor.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea8\\asesor.cs",
+              "RelativeToolTip": "Semana2_tarea8\\asesor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T04:02:29.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea7\\Program.cs",
+              "RelativeDocumentMoniker": "Semana2_tarea7\\Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea7\\Program.cs",
+              "RelativeToolTip": "Semana2_tarea7\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T04:01:40.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea6\\Program.cs",
+              "RelativeDocumentMoniker": "Semana2_tarea6\\Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea6\\Program.cs",
+              "RelativeToolTip": "Semana2_tarea6\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T04:01:10.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "paciente.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea6\\paciente.cs",
+              "RelativeDocumentMoniker": "Semana2_tarea6\\paciente.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea6\\paciente.cs",
+              "RelativeToolTip": "Semana2_tarea6\\paciente.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T04:01:09.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea5\\Program.cs",
+              "RelativeDocumentMoniker": "Semana2_tarea5\\Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea5\\Program.cs",
+              "RelativeToolTip": "Semana2_tarea5\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T04:00:33.785Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Obreros.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea4\\Obreros.cs",
+              "RelativeDocumentMoniker": "Semana2_tarea4\\Obreros.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea4\\Obreros.cs",
+              "RelativeToolTip": "Semana2_tarea4\\Obreros.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T04:00:01.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea4\\Program.cs",
+              "RelativeDocumentMoniker": "Semana2_tarea4\\Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea4\\Program.cs",
+              "RelativeToolTip": "Semana2_tarea4\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T04:00:02.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Edificio.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea3\\Edificio.cs",
+              "RelativeDocumentMoniker": "Semana2_tarea3\\Edificio.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea3\\Edificio.cs",
+              "RelativeToolTip": "Semana2_tarea3\\Edificio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T03:59:17.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea3\\Program.cs",
+              "RelativeDocumentMoniker": "Semana2_tarea3\\Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea3\\Program.cs",
+              "RelativeToolTip": "Semana2_tarea3\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T03:59:17.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Computadora.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea2\\Computadora.cs",
+              "RelativeDocumentMoniker": "Semana2_tarea2\\Computadora.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea2\\Computadora.cs",
+              "RelativeToolTip": "Semana2_tarea2\\Computadora.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T03:58:50.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea2\\Program.cs",
+              "RelativeDocumentMoniker": "Semana2_tarea2\\Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea2\\Program.cs",
+              "RelativeToolTip": "Semana2_tarea2\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T03:58:46.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Empleado.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea7\\Empleado.cs",
+              "RelativeDocumentMoniker": "Semana2_tarea7\\Empleado.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Pictures\\C#\\Semana1_tareas\\Semana1__TAREA\\Semana2_tarea7\\Empleado.cs",
+              "RelativeToolTip": "Semana2_tarea7\\Empleado.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T04:08:08.464Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

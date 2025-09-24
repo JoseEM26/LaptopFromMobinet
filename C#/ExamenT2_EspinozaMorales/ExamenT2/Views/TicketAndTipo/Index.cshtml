@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Menu of the SystemTicket</h2>
+<br />
+<br />
+
+<table class="table">
+    <tbody>
+        <tr>
+            <td><strong>1._</strong></td>
+            <td>@Html.ActionLink("Formulario Ticket", "MostrarTodoTicket")</td>
+        </tr>
+        <tr>
+            <td><strong>2._</strong></td>
+            <td>@Html.ActionLink("Formulario Tipo", "MostrarTodoTipo")</td>
+        </tr>
+        <tr>
+            <td><strong>3._</strong></td>
+            <td>@Html.ActionLink("Formmulario Atencion", "MostrarTodo", "Atenciones")</td>
+        </tr>
+        <tr>
+            <td><strong>4._</strong></td>
+            <td>@Html.ActionLink("Formulario Agencia", "Index", "Agencia")</td>
+        </tr>
+    </tbody>
+</table>
+

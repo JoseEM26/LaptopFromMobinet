@@ -1,0 +1,77 @@
+﻿@model IEnumerable<POO1_T1_EspinozaMoralesJoseAngel.Models.Asistente>
+
+@{
+    ViewBag.Title = "Listado";
+}
+
+<h2>Listado</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.dniTrab)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apeTrab)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomTrab)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecContrato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.categoriaTrab)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numeroHijos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gradoEducacion)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.dniTrab)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apeTrab)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomTrab)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecContrato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.categoriaTrab)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numeroHijos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gradoEducacion)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+
+</table>
+<br />
+<br />
+<hr />
+<div>
+    @Html.ActionLink("Crear nuevo Asistente", "Create")
+</div>

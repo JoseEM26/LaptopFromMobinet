@@ -1,0 +1,7 @@
+C:\Users\ADMIN\Pictures\C#\semana2_practicasExamen\semana2_practicasExamen\bin\Debug\semana2_practicasExamen.exe.config
+C:\Users\ADMIN\Pictures\C#\semana2_practicasExamen\semana2_practicasExamen\bin\Debug\semana2_practicasExamen.exe
+C:\Users\ADMIN\Pictures\C#\semana2_practicasExamen\semana2_practicasExamen\bin\Debug\semana2_practicasExamen.pdb
+C:\Users\ADMIN\Pictures\C#\semana2_practicasExamen\semana2_practicasExamen\obj\Debug\semana2_Herencia.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Pictures\C#\semana2_practicasExamen\semana2_practicasExamen\obj\Debug\semana2_Herencia.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Pictures\C#\semana2_practicasExamen\semana2_practicasExamen\obj\Debug\semana2_practicasExamen.exe
+C:\Users\ADMIN\Pictures\C#\semana2_practicasExamen\semana2_practicasExamen\obj\Debug\semana2_practicasExamen.pdb
