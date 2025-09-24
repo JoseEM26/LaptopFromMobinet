@@ -10,11 +10,9 @@
 .springBeans
 .sts4-cache
 
-
 # Created by https://www.gitignore.io/api/git,java,maven,eclipse,windows
 
 ### Eclipse ###
-
 .metadata
 bin/
 tmp/
@@ -135,6 +133,10 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
+### React/Node ###
+# Ignore node_modules
+node_modules/
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -159,6 +161,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
 
 # End of https://www.gitignore.io/api/git,java,maven,eclipse,windows
