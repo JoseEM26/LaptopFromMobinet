@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">CalculadorIMC</string>
+
+    <string name="hint_peso">Peso</string>
+    <string name="hint_talla">Talla en metros</string>
+    <string name="key_peso">key_peso</string>
+    <string name="key_talla">key_talla</string>
+
+    <string name="btn_calcular">calcular IMC</string>
+    <string name="msg_talla">no puedes poner una talla mayor a 4m o en cm</string>
+    <string name="msg_campo_requerido">campo Requerido</string>
+    <string name="title_resultado">Resultado IMC</string>
+    <string name="msg_flaco">Dale un 1 sol de pan al flaco ese ajajja</string>
+    <string name="msg_normal">Estas bien causa</string>
+    <string name="msg_gordo">Es hora es bajar de peso Majin Boo</string>
+    <string name="fab_reiniciar">Reiniciar</string>
+    <string name="fmt_resultado">Resultado: %1$.2f</string>
+</resources>

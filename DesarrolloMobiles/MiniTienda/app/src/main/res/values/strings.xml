@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">MiniTienda</string>
+
+    <!-- Main -->
+    <string name="titulo_main">MiniTienda</string>
+    <string name="lbl_estado">Estado</string>
+    <string name="btn_agregar">Agregar</string>
+    <string name="resumen_titulo">Resumen</string>
+    <string name="resumen_vacio">No has agregado productos.</string>
+    <string name="moneda_prefijo">S/</string>
+
+    <!-- Totales -->
+    <string name="lbl_subtotal">Subtotal: %1$s %2$s</string>
+    <string name="lbl_igv">IGV (18%%): %1$s %2$s</string>
+    <string name="lbl_total">Total: %1$s %2$s</string>
+
+    <!-- Diálogo de producto -->
+    <string name="dialog_titulo_form">Nuevo producto</string>
+    <string name="hint_nombre">Nombre</string>
+    <string name="hint_precio">Precio</string>
+    <string name="hint_cantidad">Cantidad</string>
+    <string name="lbl_disponible">Disponible</string>
+    <string name="lbl_categoria">Categoría</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="btn_cancelar">Cancelar</string>
+
+    <!-- Validaciones -->
+    <string name="error_nombre_requerido">Ingresa un nombre</string>
+    <string name="error_precio_requerido">Ingresa un precio válido</string>
+    <string name="error_cantidad_requerida">Ingresa una cantidad mayor a 0</string>
+    <string name="error_cantidad_max">Máximo permitido: 100</string>
+
+    <!-- Item -->
+    <string name="fmt_precio">Precio: %1$s %2$s</string>
+    <string name="fmt_detalle">%1$s • %2$s</string> <!-- ejemplo: "Disponible • Hogar" -->
+
+    <!-- Acciones item -->
+    <string name="menu_editar_cantidad">Editar cantidad</string>
+    <string name="menu_eliminar">Eliminar</string>
+
+</resources>
