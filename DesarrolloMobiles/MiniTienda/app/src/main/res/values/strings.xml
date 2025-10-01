@@ -1,4 +1,5 @@
 <resources>
+    <!-- App -->
     <string name="app_name">MiniTienda</string>
 
     <!-- Main -->
@@ -32,7 +33,7 @@
 
     <!-- Item -->
     <string name="fmt_precio">Precio: %1$s %2$s</string>
-    <string name="fmt_detalle">%1$s • %2$s</string> <!-- ejemplo: "Disponible • Hogar" -->
+    <string name="fmt_detalle">%1$s  •  %2$s</string> <!-- ejemplo: “Disponible • Hogar” -->
 
     <!-- Acciones item -->
     <string name="menu_editar_cantidad">Editar cantidad</string>

@@ -19,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MiniTienda"
+rootProject.name = "Mini Tienda"
 include(":app")
+ 

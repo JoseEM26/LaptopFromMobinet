@@ -5,6 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="8dp"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
     <com.google.android.material.textview.MaterialTextView
@@ -12,55 +15,51 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/titulo_main"
-        android:textAlignment="center"
-        android:textSize="16sp"
+        android:textSize="22sp"
         android:textStyle="bold"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toTopOf="@+id/spEstado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spEstado"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/space_16"
+        android:layout_width="265dp"
+        android:layout_height="30dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintDimensionRatio=""
-        app:layout_constraintEnd_toStartOf="@+id/btn_agregar"
+        app:layout_constraintEnd_toStartOf="@+id/btnAgregar"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_agregar"
+        android:id="@+id/btnAgregar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:minHeight="@dimen/btn_min_height"
         android:text="@string/btn_agregar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="241dp" />
+        app:layout_constraintTop_toBottomOf="@id/txtTitulo" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/txtResumen"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:paddingStart="@dimen/space_16"
-        android:paddingTop="@dimen/space_8"
-        android:paddingEnd="@dimen/space_16"
-        android:text="@string/resumen_titulo"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_agregar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAgregar" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvProducto"
+        android:id="@+id/rvProductos"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:padding="@dimen/space_8"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtResumen" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
